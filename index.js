@@ -6,21 +6,21 @@ const User = require('./models/User');
 const bcrypt = require('bcrypt');
 const nodemailer = require('nodemailer');
 const { sign, verify } = require('jsonwebtoken');
-const logAccess = require('./middleware/logAccess'); // Import the logging middleware
+const logAccess = require('./middleware/logAccess'); 
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(logAccess); // Use the logging middleware
+app.use(logAccess);
 
-// Example of setting req.user in authentication middleware
+
 const authenticate = (req, res, next) => {
     const token = req.headers.authorization?.split(' ')[1];
     if (token) {
         try {
             const decoded = verify(token, 'your_secret_key');
-            req.user = decoded; // Assuming decoded contains user information
+            req.user = decoded; 
             next();
         } catch (err) {
             return res.status(401).json({ message: 'Unauthorized' });
@@ -30,7 +30,7 @@ const authenticate = (req, res, next) => {
     }
 };
 
-app.use(authenticate); // Use the authentication middleware
+app.use(authenticate); 
 
 mongoose.connect('mongodb://localhost:27017/diet-planner', {
     useNewUrlParser: true,
@@ -104,7 +104,7 @@ app.post('/submit', async (req, res) => {
         await newFormData.save();
         res.status(200).json({ message: 'Data saved successfully' });
     } catch (err) {
-        console.error('Error saving data:', err); // Log the error
+        console.error('Error saving data:', err); 
         res.status(500).json({ message: 'Error saving data', error: err.message });
     }
 });
