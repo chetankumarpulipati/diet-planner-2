@@ -5,7 +5,7 @@ import '../styles/register.css';
 function Register() {
     const [formData, setFormData] = useState({
         full_name: '',
-        country_code: '+91', // Default value
+        country_code: '+91', 
         mobile: '',
         organisation: '',
         email: '',
