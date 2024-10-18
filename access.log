@@ -228,3 +228,5 @@ User ID: abca5c1a-d160-4e3c-9a1a-5ae7425a10eb, URL: /submit, Method: POST, Times
 User ID: 9fc6f20a-0d01-443a-8a94-71c6fd9ad958, URL: /verify-email, Method: POST, Timestamp: 2024-10-18T08:38:45.938Z
 User ID: cb95747f-4128-4fa1-b3e6-011f843b702b, URL: /verify-email, Method: POST, Timestamp: 2024-10-18T08:39:09.107Z
 User ID: af5d6d0f-89db-486e-93a1-02dd262ae3b2, URL: /reset-password, Method: POST, Timestamp: 2024-10-18T08:39:18.021Z
+User ID: 800b5e23-da68-40a7-a3b1-c2d9f2d91bfa, URL: /data, Method: GET, Timestamp: 2024-10-18T09:06:16.837Z
+User ID: ae4a39cd-cf0a-413b-b370-260afabf8376, URL: /data, Method: GET, Timestamp: 2024-10-18T09:06:19.348Z
