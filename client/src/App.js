@@ -11,6 +11,7 @@ import About from "./components/about";
 import Profile from "./components/profile";
 import Pricing from "./components/pricing";
 import Initial from './components/home_launch'
+import Bmi from './components/bmi'
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/inputs" element={<Inputs />} />
+                    <Route path="/bmi" element={<Bmi />} />
                     {/* <Route path="/Home" element={
                         <>
                             <h1 style={{color: "black"}}>Welcome to the Fitness App</h1>

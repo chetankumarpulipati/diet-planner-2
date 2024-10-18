@@ -6,10 +6,15 @@ const PricingTable = () => {
     "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg",
     "https://images.pexels.com/photos/1966433/pexels-photo-1966433.jpeg",
     "https://images.pexels.com/photos/1234652/pexels-photo-1234652.jpeg",
-    "https://images.pexels.com/photos/1234563/pexels-photo-1234563.jpeg"
+    "https://images.pexels.com/photos/1234563/pexels-photo-1234563.jpeg",
+    "https://images.pexels.com/photos/1435897/pexels-photo-1435897.jpeg",
+    "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg", 
+    "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg",
+    "https://images.pexels.com/photos/1640776/pexels-photo-1640776.jpeg",
+    "https://images.pexels.com/photos/1435898/pexels-photo-1435898.jpeg"
   ];
 
-  const [backgroundImage, setBackgroundImage] = useState("");
+  const [backgroundImage, setBackgroundImage] = useState(0);
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * backgroundImages.length);

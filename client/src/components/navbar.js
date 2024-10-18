@@ -42,6 +42,7 @@ function NavigationBar() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="navbar-nav">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/bmi">BMI</Nav.Link>
                         <Nav.Link as={Link} to="/pricing">Pricing</Nav.Link>
                         <Nav.Link as={Link} to="/about">About</Nav.Link>
                         {isLoggedIn ? (
