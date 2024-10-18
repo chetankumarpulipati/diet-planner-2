@@ -10,6 +10,7 @@ import Login from "./components/login";
 import About from "./components/about";
 import Profile from "./components/profile";
 import Pricing from "./components/pricing";
+import Initial from './components/home_launch'
 
 function App() {
     return (
@@ -17,19 +18,21 @@ function App() {
             <div className="main-container">
                 <NavigationBar />
                 <Routes>
+                    <Route path="/" element={<Initial />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/pricing" element={<Pricing />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/profile" element={<Profile />} />
-                    <Route path="/" element={
+                    <Route path="/inputs" element={<Inputs />} />
+                    {/* <Route path="/Home" element={
                         <>
                             <h1 style={{color: "black"}}>Welcome to the Fitness App</h1>
                             <p>Schedule your diet with our diet planning system</p>
                             <Inputs/>
                             <Timetable/>
                         </>
-                    }/>
+                    }/> */}
                 </Routes>
             </div>
         </Router>

@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    background-image: url('images/background-image.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -67,8 +66,7 @@ button:hover {
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 1000;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
 }
 
 .navbar-brand-center {
@@ -85,7 +83,7 @@ button:hover {
     padding-top: 60px;
 }
 
-.circular-progress-container {
+.circular-progress-container {  
     display: flex;
     justify-content: center;
     align-items: center;
