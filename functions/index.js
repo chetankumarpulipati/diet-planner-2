@@ -16,7 +16,7 @@ exports.sendResetPasswordEmail = functions.https.onCall(async (data, context) =>
     const { email, newPassword } = data;
 
     const mailOptions = {
-        from: 'websterw116@gmail.com', // Replace with your email
+        from: 'websterw116@gmail.com',
         to: email,
         subject: 'Your new password',
         text: `Your new password is: ${newPassword}`

@@ -88,8 +88,8 @@ const PricingTable = () => {
       backgroundColor: "#ff4081",
       color: "white",
       fontWeight: "bold",
-      display: "inline-block",
-      marginTop: "20px",
+      // display: "inline-block",
+      marginTop: "10px",
     },
     animatedBackground: {
       position: "absolute",
@@ -112,7 +112,6 @@ const PricingTable = () => {
       <p style={styles.paragraph}>Choose a plan that suits your needs</p>
 
       <div style={styles.pricingTable}>
-        {/* Weekly Plan */}
         <div style={styles.plan}>
           <div style={{ ...styles.planHeader, ...styles.weekly }}>
             Weekly Plan
