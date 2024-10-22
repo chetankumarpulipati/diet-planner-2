@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../App.css';
 
 function Inputs() {
     const initialFormData = {
@@ -19,7 +18,7 @@ function Inputs() {
         friday: '',
         saturday: '',
         sunday: ''
-    }
+    };
     const [formData, setFormData] = useState(initialFormData);
     const [submitted, setSubmitted] = useState(false);
     const [errors, setErrors] = useState({});
@@ -29,17 +28,11 @@ function Inputs() {
     const [fetchedData, setFetchedData] = useState([]);
     const [totalCalories, setTotalCalories] = useState(0);
     const [mealBreakdown, setMealBreakdown] = useState({});
-    
+
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
-        setErrors({
-            ...errors,
-            [name]: ''
-        });
+        setFormData({ ...formData, [name]: value });
+        setErrors({ ...errors, [name]: '' });
     };
 
     const handleSubmit = (e) => {
@@ -48,20 +41,15 @@ function Inputs() {
         if (!formData.age) newErrors.age = 'Age is required';
         if (!formData.height) newErrors.height = 'Height is required';
         if (!formData.weight) newErrors.weight = 'Weight is required';
-
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
             return;
         }
-
         setIsButtonDisabled(true);
         setLoading(true);
-
         fetch('http://localhost:3000/submit', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         })
             .then(response => {
@@ -85,7 +73,6 @@ function Inputs() {
             .catch((error) => {
                 console.error('Error:', error);
             });
-
         setTimeout(() => {
             setLoading(false);
             setShowTable(true);
@@ -141,88 +128,107 @@ function Inputs() {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label>Age</label>
-                <br/>
+        <div className="p-8 bg-gray-300 min-h-screen flex items-center justify-center">
+            <form onSubmit={handleSubmit} className="bg-gray-800 p-8 rounded-lg shadow-md w-full max-w-5xl space-y-6">
+                <h2 className="text-2xl font-bold text-center text-white">Details</h2>
+
+                <label className="ml-6 block mb-2 text-lg font-sans text-gray-900 dark:text-white">Age</label>
                 <input
                     type="text"
                     name="age"
                     value={formData.age}
                     onChange={handleChange}
                     placeholder="Enter your age"
-                    style={{borderColor: errors.age ? 'red' : '', fontSize: '12px'}}
+                    className={`bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${errors.age ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:border-blue-500`}
                 />
-                {errors.age && <p style={{color: 'red', fontSize: '12px'}}>{errors.age}</p>}
-                <br/>
-                <label>Height (cm)</label>
-                <br/>
+                {errors.age && <p className="text-red-500 text-xs mt-1">{errors.age}</p>}
+
+                <label className="ml-6 block mb-2 text-lg font-sans text-gray-900 dark:text-white">Height (cm)</label>
                 <input
                     type="text"
                     name="height"
                     value={formData.height}
                     onChange={handleChange}
                     placeholder="Enter your height"
-                    style={{borderColor: errors.height ? 'red' : '', fontSize: '12px'}}
+                    className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${errors.age ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:border-blue-500`}
                 />
-                {errors.height && <p style={{color: 'red', fontSize: '12px'}}>{errors.height}</p>}
-                <br/>
-                <label>Weight (kg)</label>
-                <br/>
+                {errors.height && <p className="text-red-500 text-xs mt-1">{errors.height}</p>}
+
+                <label className="ml-6 block mb-2 text-lg font-sans text-gray-900 dark:text-white">Weight (kg)</label>
                 <input
                     type="text"
                     name="weight"
                     value={formData.weight}
                     onChange={handleChange}
                     placeholder="Enter your weight"
-                    style={{borderColor: errors.weight ? 'red' : '', fontSize: '12px'}}
+                    className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${errors.age ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:border-blue-500`}
                 />
-                {errors.weight && <p style={{color: 'red', fontSize: '12px'}}>{errors.weight}</p>}
-                <br/>
-                <label>Activity Level</label>
-                <br/>
-                <select name="activity" value={formData.activity} onChange={handleChange}>
+                {errors.weight && <p className="text-red-500 text-xs mt-1">{errors.weight}</p>}
+
+                <label className="ml-6 block mb-2 text-lg font-sans text-gray-900 dark:text-white">Activity Level (Ex: active, moderate)</label>
+                <select
+                    name="activity"
+                    value={formData.activity}
+                    onChange={handleChange}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
                     <option value="sedentary">Sedentary</option>
                     <option value="lightly active">Lightly Active</option>
                     <option value="moderately active">Moderately Active</option>
                     <option value="very active">Very Active</option>
                     <option value="extra active">Extra Active</option>
                 </select>
-                <br/>
-                <label>Gender</label>
-                <br/>
-                <select name="gender" value = {formData.gender} onChange={handleChange}>
+
+                <label className="ml-6 block mb-2 text-lg font-sans text-gray-900 dark:text-white" >Gender (M / F)</label>
+                <select
+                    name="gender"
+                    value={formData.gender}
+                    onChange={handleChange}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>
-                <label>Goal</label>
-                <br/>
-                <select name="goal" value={formData.goal} onChange={handleChange}>
+
+                <label className="ml-6 block mb-2 text-lg font-sans text-gray-900 dark:text-white">Goal (Ex: Gain / Loss)</label>
+                <select
+                    name="goal"
+                    value={formData.goal}
+                    onChange={handleChange}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
                     <option value="weight gain">Weight Gain</option>
                     <option value="weight loss">Weight Loss</option>
                 </select>
-                <br/>
-                <br/>
-                <label>I'm a</label>
-                <br/>
-                <select name="preference" value={formData.preference} onChange={handleChange}>
+
+                <label className="ml-6 block mb-2 text-lg font-sans text-gray-900 dark:text-white">I'm a</label>
+                <select
+                    name="preference"
+                    value={formData.preference}
+                    onChange={handleChange}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
                     <option value="vegetarian">Vegetarian</option>
                     <option value="non-vegetarian">Non-Vegetarian</option>
                 </select>
-                <br/>
-                <br/>
-                <button type="submit" disabled={isButtonDisabled} className={loading ? 'loading' : ''}>
-                    Submit
+
+                <button
+                    type="submit"
+                    disabled={isButtonDisabled}
+                    className={`mt-4 w-full p-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 ${loading ? 'loading' : ''}`}
+                > Submit
                 </button>
+
                 {loading && (
-                    <div className="circular-progress-container">
+                    <div className="circular-progress-container flex justify-center items-center mt-4">
                         <div className="circular-progress"></div>
                     </div>
                 )}
+
                 {showTable && (
                     <>
                         <h4 style={{alignItems: "center", textAlign: 'center', marginTop: 20}}>Input Data</h4>
-                        <table>
+                        <table className="bg-white">
                             <thead>
                             <tr>
                                 <th>Age</th>
@@ -245,9 +251,9 @@ function Inputs() {
                             </tbody>
                         </table>
                         <h4 style={{alignItems: "center", textAlign: 'center', marginTop: 20}}>Schedule</h4>
-                        <table>
+                        <table className="bg-white">
                             <thead>
-                            <tr>
+                            <tr className="p-5">
                                 <th>Day</th>
                                 <th>Breakfast</th>
                                 <th>Lunch</th>
@@ -259,7 +265,8 @@ function Inputs() {
                             <tbody>
                             <tr>
                                 <td>Monday</td>
-                                <td>{breakfast_menu.monday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small></td>
+                                <td>{breakfast_menu.monday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
+                                </td>
                                 <td><br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
                                 <td><br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
                                 <td><br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
@@ -267,47 +274,53 @@ function Inputs() {
                             </tr>
                             <tr>
                                 <td>Tuesday</td>
-                                <td>{breakfast_menu.tuesday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small></td>
+                                <td>{breakfast_menu.tuesday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
+                                </td>
                                 <td><br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
                                 <td><br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
                                 <td><br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
                                 <td>{totalCalories}</td>
                             </tr>
                             <tr>
-                            <td>Wednesday</td>
-                                <td>{breakfast_menu.wednesday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small></td>
+                                <td>Wednesday</td>
+                                <td>{breakfast_menu.wednesday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
+                                </td>
                                 <td><br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
                                 <td><br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
                                 <td><br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
                                 <td>{totalCalories}</td>
                             </tr>
                             <tr>
-                            <td>Thursday</td>
-                                <td>{breakfast_menu.thursday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small></td>
+                                <td>Thursday</td>
+                                <td>{breakfast_menu.thursday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
+                                </td>
                                 <td><br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
                                 <td><br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
                                 <td><br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
                                 <td>{totalCalories}</td>
                             </tr>
                             <tr>
-                            <td>Friday</td>
-                                <td>{breakfast_menu.friday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small></td>
+                                <td>Friday</td>
+                                <td>{breakfast_menu.friday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
+                                </td>
                                 <td><br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
                                 <td><br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
                                 <td><br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
                                 <td>{totalCalories}</td>
                             </tr>
                             <tr>
-                            <td>Saturday</td>
-                                <td>{breakfast_menu.saturday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small></td>
+                                <td>Saturday</td>
+                                <td>{breakfast_menu.saturday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
+                                </td>
                                 <td><br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
                                 <td><br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
                                 <td><br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
                                 <td>{totalCalories}</td>
                             </tr>
                             <tr>
-                            <td>Sunday</td>
-                                <td>{breakfast_menu.sunday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small></td>
+                                <td>Sunday</td>
+                                <td>{breakfast_menu.sunday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
+                                </td>
                                 <td><br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
                                 <td><br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
                                 <td><br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
@@ -315,10 +328,10 @@ function Inputs() {
                             </tr>
                             <tr>
                                 <td>Total</td>
-                                <td>{(mealBreakdown.breakfast*7).toFixed(2)}</td>
-                                <td>{(mealBreakdown.lunch*7).toFixed(2)}</td>
-                                <td>{(mealBreakdown.dinner*7).toFixed(2)}</td>
-                                <td>{(mealBreakdown.snacks*7).toFixed(2)}</td>
+                                <td>{(mealBreakdown.breakfast * 7).toFixed(2)}</td>
+                                <td>{(mealBreakdown.lunch * 7).toFixed(2)}</td>
+                                <td>{(mealBreakdown.dinner * 7).toFixed(2)}</td>
+                                <td>{(mealBreakdown.snacks * 7).toFixed(2)}</td>
                                 <td><b>{(totalCalories * 7).toFixed(2)} </b></td>
                             </tr>
                             </tbody>

@@ -64,20 +64,23 @@ function Login() {
     };
 
     return (
+        <div className="login-page">
         <div className="login-container">
-            <form onSubmit={handleSubmit}>
+            <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
                 <h2>Login</h2>
                 <label>Email</label>
                 <input type="email" name="email" onChange={handleChange} required/>
+
                 <label>Password</label>
                 <input type="password" name="password" onChange={handleChange} required/>
-                <span onClick={forgot_password} className="centered-span-container" style={{color: 'blue', cursor: 'pointer'}}>Forgot Password?</span>
+                <span onClick={forgot_password} className="centered-span-container"
+                      style={{color: 'white', fontSize: 15, cursor: 'pointer'}}>Forgot Password?</span>
                 <br/>
                 <button type="submit">Login</button>
             </form>
-            {isModalOpen && <ResetPasswordModal isOpen={isModalOpen} onClose={closeModal} />}
+            {isModalOpen && <ResetPasswordModal isOpen={isModalOpen} onClose={closeModal}/>}
+        </div>
         </div>
     );
 }
-
 export default Login;

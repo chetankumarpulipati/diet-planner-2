@@ -1,0 +1,123 @@
+#main1 {
+    background-color: #15171C;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.color{
+    color: white;
+    text-decoration: none;
+}
+
+#mainchild {
+    color: yellowgreen;
+    position: relative;
+    top: 40px;
+    left: 50px;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#mainchild2 {
+    position: relative;
+    top: 40px;
+    left: -550px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+#mainchild3 {
+    position: absolute;
+    top: 48px;
+    left:1030px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+#mainchild4 {
+    position: absolute;
+    top: 48px;
+    left: 1150px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+#img1 {
+    position: relative;
+    top: 20px;
+    left: 10px;
+    width: 70px;
+    height: 70px;
+}
+
+video {
+    object-fit: contain;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+#videos{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+#img3{
+    width:43%;
+    height:575px;
+    object-fit: cover;
+    object-position: center center;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    border-top-left-radius: 100px;
+    left: 800px;
+}
+
+#calorie{
+    height: 500px;
+    margin-left: 70px;
+    margin-top:210px;
+}
+
+#plan{
+    margin-left: 750px;
+    margin-top: -500px;
+    text-transform: uppercase;
+
+}
+
+#content{
+    margin-left: 670px;
+}
+
+#use{
+    margin-left:630px;
+    margin-top: 50px;
+    font-size:  43px;
+    font-weight: bolder;
+}
+#planner{
+    margin-left: 670px;
+    margin-top: -35px;
+    font-size: 18px;
+}
+
+#regi{
+    margin-left:630px;
+    margin-top: 50px;
+    font-size:  43px;
+    font-weight: bolder;
+}
+#schemes{
+    margin-left: 430px;
+    margin-top: -35px;
+    font-size: 18px;
+}
+
+#nut{
+    margin-left: 470px;
+    margin-top: -50px;
+}

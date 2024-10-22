@@ -113,7 +113,7 @@ const PricingTable = () => {
   return (
     <div style={styles.body}>
       <div style={styles.animatedBackground}></div>
-      <h1 style={styles.heading}>Our Pricing Table</h1>
+      {/* <h1 style={styles.heading}>Our Pricing Table</h1> */}
       <p style={styles.paragraph}>Choose a plan that suits your needs</p>
 
       <div style={styles.pricingTable}>
