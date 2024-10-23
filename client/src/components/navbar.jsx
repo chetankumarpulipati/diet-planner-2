@@ -37,7 +37,7 @@ function NavigationBar() {
         <Navbar bg="light" expand="lg" className="bg-black navbar-container">
             <Navbar.Brand as={Link} to="/" className="text-white navbar-brand-center">Diet App</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse  id="basic-navbar-nav">
+            <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="navbar-nav ml-auto">
                     <Nav.Link className="text-white" as={Link} to="/">Home</Nav.Link>
                     <Nav.Link className="text-white" as={Link} to="/bmi">BMI</Nav.Link>

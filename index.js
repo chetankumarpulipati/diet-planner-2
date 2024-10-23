@@ -156,6 +156,24 @@ app.get('/food-items', async (req, res) => {
     }
 });
 
+const emailSchema = new mongoose.Schema({
+    email: String,
+});
+
+const Email = mongoose.model('Email', emailSchema);
+
+app.post('/newsletter', async (req, res) => {
+    const { email } = req.body;
+    const newEmail = new Email({ email });
+    try {
+        await newEmail.save();
+        console.log('Email saved:', email);
+        res.send('Email saved successfully');
+    } catch (error) {
+        console.error('Error saving email:', error);
+        res.status(500).send('Error saving email');
+    }
+});
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);

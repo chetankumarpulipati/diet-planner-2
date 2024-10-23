@@ -10,7 +10,24 @@ function Home() {
   function handleSubmit() {
     const email = document.getElementById("email-address").value;
     console.log(email);
+    fetch('http://localhost:3000/newsletter', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email }),
+    })
+        .then((response) => response.text())
+        .then((data) => {
+          console.log('Success:', data);
+          // alert('Subscribed successfully');
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          alert('An error occurred. Please try again later');
+        })
   }
+
   return (
     <div style={styles.container}>
       <header style={styles.header}>

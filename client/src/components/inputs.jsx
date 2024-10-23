@@ -227,7 +227,7 @@ function Inputs() {
 
                 {showTable && (
                     <>
-                        <h4 style={{alignItems: "center", textAlign: 'center', marginTop: 20}}>Input Data</h4>
+                        <h4 style={{color: 'white', alignItems: "center", textAlign: 'center', marginTop: 20}}>Input Data</h4>
                         <table className="bg-white">
                             <thead>
                             <tr>
@@ -250,7 +250,7 @@ function Inputs() {
                             ))}
                             </tbody>
                         </table>
-                        <h4 style={{alignItems: "center", textAlign: 'center', marginTop: 20}}>Schedule</h4>
+                        <h4 style={{color: 'white', alignItems: "center", textAlign: 'center', marginTop: 20}}>Schedule</h4>
                         <table className="bg-white">
                             <thead>
                             <tr className="p-5">
