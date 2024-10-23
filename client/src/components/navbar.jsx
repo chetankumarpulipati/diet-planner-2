@@ -34,15 +34,15 @@ function NavigationBar() {
     };
 
     return (
-        <Navbar bg="light" expand="lg" className="navbar-container">
-            <Navbar.Brand as={Link} to="/" className="navbar-brand-center">Diet App</Navbar.Brand>
+        <Navbar bg="light" expand="lg" className="bg-black navbar-container">
+            <Navbar.Brand as={Link} to="/" className="text-white navbar-brand-center">Diet App</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
+            <Navbar.Collapse  id="basic-navbar-nav">
                 <Nav className="navbar-nav ml-auto">
-                    <Nav.Link as={Link} to="/">Home</Nav.Link>
-                    <Nav.Link as={Link} to="/bmi">BMI</Nav.Link>
-                    <Nav.Link as={Link} to="/pricing">Pricing</Nav.Link>
-                    <Nav.Link as={Link} to="/about">About</Nav.Link>
+                    <Nav.Link className="text-white" as={Link} to="/">Home</Nav.Link>
+                    <Nav.Link className="text-white" as={Link} to="/bmi">BMI</Nav.Link>
+                    <Nav.Link className="text-white" as={Link} to="/pricing">Pricing</Nav.Link>
+                    <Nav.Link className="text-white" as={Link} to="/about">About</Nav.Link>
                     {isLoggedIn ? (
                         <NavDropdown title={email} id="basic-nav-dropdown">
                             <NavDropdown.Item as={Link} to="/Profile">Profile</NavDropdown.Item>
@@ -50,8 +50,8 @@ function NavigationBar() {
                         </NavDropdown>
                     ) : (
                         <>
-                            <Nav.Link as={Link} to="/register">Sign up</Nav.Link>
-                            <Nav.Link as={Link} to="/login">Sign in</Nav.Link>
+                            <Nav.Link className="text-white" as={Link} to="/register">Sign up</Nav.Link>
+                            <Nav.Link className="text-white" as={Link} to="/login">Sign in</Nav.Link>
                         </>
                     )}
                 </Nav>
