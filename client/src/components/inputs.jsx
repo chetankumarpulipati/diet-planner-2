@@ -92,44 +92,6 @@ function Inputs() {
             });
     }, []);
 
-    // useEffect(() => {
-    //     const fetchData = async (mealType, maxCalories) => {
-    //         try {
-    //             const response = await fetch(`http://localhost:3000/${mealType}`);
-    //             const data = await response.json();
-    //             console.log(`Data received from backend for ${mealType}:`, data);
-    //
-    //             let totalCalories = 0;
-    //             const selectedItems = [];
-    //
-    //             for (const item of data) {
-    //                 if (totalCalories + item.calories <= maxCalories) {
-    //                     totalCalories += item.calories;
-    //                     selectedItems.push(item.name);
-    //                 } else {
-    //                     break;
-    //                 }
-    //             }
-    //
-    //             console.log(`Total calories of selected ${mealType} items:`, totalCalories);
-    //
-    //             setBreakfastMenu(prevMenu => ({
-    //                 ...prevMenu,
-    //                 monday: {
-    //                     ...prevMenu.monday,
-    //                     [mealType]: selectedItems.join(', ')
-    //                 }
-    //             }));
-    //         } catch (error) {
-    //             console.error(`Error fetching ${mealType} data:`, error);
-    //         }
-    //     };
-    //
-    //     if (mealBreakdown.breakfast) fetchData('breakfast', mealBreakdown.breakfast);
-    //     if (mealBreakdown.lunch) fetchData('lunch', mealBreakdown.lunch);
-    //     if (mealBreakdown.dinner) fetchData('dinner', mealBreakdown.dinner);
-    //     if (mealBreakdown.snacks) fetchData('snacks', mealBreakdown.snacks);
-    // }, [mealBreakdown]);
     useEffect(() => {
         const fetchData = async (mealType, maxCalories) => {
             try {
