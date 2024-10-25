@@ -248,7 +248,7 @@ app.get('/dinner', async (req, res) => {
 app.get('/snacks', async (req, res) => {
     try {
         const meals = await mongoose.connection.db.collection('food_items').aggregate([
-            { $match: { category: 'snack' } }, // Corrected category name
+            { $match: { category: 'snack' } },
             { $addFields: { totalCalories: { $sum: '$calories' } } },
             { $match: { totalCalories: { $lt: 1000 } } }
         ]).toArray();

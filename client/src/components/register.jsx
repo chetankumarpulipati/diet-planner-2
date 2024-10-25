@@ -71,15 +71,7 @@ function Register() {
                     <input type="password" name="password" value={formData.password} onChange={handleChange}
                            className="border border-e-black-700 rounded-lg p-2 mb-8 focus:border-blue-500 focus:outline-none"
                            required/>
-                    <div className="flex items-start mb-2 ml-3">
-                        <div className="flex items-center">
-                            <input id="terms" type="checkbox" value=""
-                                   className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
-                                   required/>
-                        </div>
-                        <label htmlFor="terms" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I
-                            agree with the <a href="#" className="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a></label>
-                    </div>
+                    
                     <button type="submit"
                             className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-red-500 bg-gray-200 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Sign
                         Up
