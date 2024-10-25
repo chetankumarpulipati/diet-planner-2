@@ -175,6 +175,97 @@ app.post('/newsletter', async (req, res) => {
     }
 });
 
+const mealSchema = new mongoose.Schema({
+    category: String,
+    items: [{ name: String, calories: Number }]
+});
+
+const Meal = mongoose.model('Meal', mealSchema);
+
+app.get('/breakfast', async (req, res) => {
+    try {
+        const meals = await mongoose.connection.db.collection('food_items').aggregate([
+            { $match: { category: 'breakfast' } },
+            { $addFields: { totalCalories: { $sum: '$items.calories' } } },
+            { $match: { totalCalories: { $lt: 1000 } } }
+        ]).toArray();
+
+        if (meals.length === 0) {
+            console.log('No meals found with the specified criteria.');
+        } else {
+            console.log('Meals found:', meals);
+        }
+
+        res.json(meals);
+    } catch (error) {
+        console.error('Error fetching meals:', error);
+        res.status(500).send(error.message);
+    }
+});
+
+app.get('/lunch', async (req, res) => {
+    try {
+        const meals = await mongoose.connection.db.collection('food_items').aggregate([
+            { $match: { category: 'lunch' } },
+            { $addFields: { totalCalories: { $sum: '$items.calories' } } },
+            { $match: { totalCalories: { $lt: 1000 } } }
+        ]).toArray();
+
+        if (meals.length === 0) {
+            console.log('No meals found with the specified criteria.');
+        } else {
+            console.log('Meals found:', meals);
+        }
+
+        res.json(meals);
+    } catch (error) {
+        console.error('Error fetching meals:', error);
+        res.status(500).send(error.message);
+    }
+});
+
+app.get('/dinner', async (req, res) => {
+    try {
+        const meals = await mongoose.connection.db.collection('food_items').aggregate([
+            { $match: { category: 'dinner' } },
+            { $addFields: { totalCalories: { $sum: '$items.calories' } } },
+            { $match: { totalCalories: { $lt: 1000 } } }
+        ]).toArray();
+
+        if (meals.length === 0) {
+            console.log('No meals found with the specified criteria.');
+        } else {
+            console.log('Meals found:', meals);
+        }
+
+        res.json(meals);
+    } catch (error) {
+        console.error('Error fetching meals:', error);
+        res.status(500).send(error.message);
+    }
+});
+
+app.get('/snacks', async (req, res) => {
+    try {
+        const meals = await mongoose.connection.db.collection('food_items').aggregate([
+            { $match: { category: 'snack' } }, // Corrected category name
+            { $addFields: { totalCalories: { $sum: '$calories' } } },
+            { $match: { totalCalories: { $lt: 1000 } } }
+        ]).toArray();
+
+        if (meals.length === 0) {
+            console.log('No meals found with the specified criteria.');
+        } else {
+            console.log('Meals found:', meals);
+        }
+
+        res.json(meals);
+    } catch (error) {
+        console.error('Error fetching meals:', error);
+        res.status(500).send(error.message);
+    }
+});
+
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });

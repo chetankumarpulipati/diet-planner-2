@@ -32,6 +32,7 @@ function Home() {
     <div style={styles.container}>
       <header style={styles.header}>
         <h1 style={styles.title}>Welcome to Diet Schedule System</h1>
+        <br></br>
         <p style={styles.subtitle}>
           Your personalized diet planning and tracking system
         </p>
@@ -50,13 +51,16 @@ function Home() {
 
       <section style={styles.mainContent}>
         <h2 style={styles.heading}>Why Choose Us?</h2>
+        <br></br>
         <p style={styles.paragraph}>
           We help you manage your diet schedule effectively by providing
           customized meal plans and diet recommendations that align with your
           health goals. Track your daily nutrition intake and improve your
           lifestyle today!
         </p>
+        <br></br>
         <h2 style={styles.heading}>How It Works</h2>
+        <br></br>
         <p style={styles.paragraph}>
           Our system analyzes your health data and lifestyle preferences to
           create the perfect diet plan tailored for you. Start today and take
@@ -157,17 +161,20 @@ const styles = {
     padding: "0",
   },
   header: {
-    backgroundColor: "#4CAF50",
+    backgroundColor: "#111827",
     color: "white",
     padding: "50px 20px",
   },
   title: {
     fontSize: "2.5em",
     margin: "0",
-    color: "aqua",
+    color: "white",
+    fontFamily: 'sans'
   },
   subtitle: {
-    fontSize: "1.5em",
+    fontFamily: 'Lucida',
+    color: 'white',
+    fontSize: "1.2em",
     margin: "10px 0 30px",
   },
   button: {
@@ -189,10 +196,12 @@ const styles = {
   },
   mainContent: {
     padding: "40px 20px",
+    backgroundColor: '#fff',
   },
   heading: {
     fontSize: "2em",
     marginBottom: "10px",
+    fontFamily: 'sans',
   },
   paragraph: {
     fontSize: "1.2em",
@@ -208,28 +217,6 @@ const styles = {
   footerText: {
     margin: "0",
   },
-//   contact_form: {
-//     color: "#fff",
-//   },
-//   contact_form: {
-//     display: 'flex',
-//     flexDirection: 'row',
-//     justifyContent: 'space-between',
-//     alignItems: 'center',
-//     padding: '20px',
-//     backgroundColor: '#f0f0f0',
-//     border: '1px solid #ddd',
-//     borderRadius: '5px',
-//     boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-//   },
-//   left_container: {
-//     width: '50%',
-//     textAlign: 'left',
-//   },
-//   right_container: {
-//     width: '50%',
-//     textAlign: 'right',
-//   },
 };
 
 export default Home;

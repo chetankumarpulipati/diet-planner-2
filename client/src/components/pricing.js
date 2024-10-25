@@ -1,26 +1,21 @@
 import React, { useState, useEffect } from "react";
 
 const PricingTable = () => {
+  // Array of image URLs (replace with your own)
   const backgroundImages = [
-    "https://images.pexels.com/photos/1234651/pexels-photo-1234651.jpeg",
-    "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg",
-    "https://images.pexels.com/photos/1966433/pexels-photo-1966433.jpeg",
-    "https://images.pexels.com/photos/1234652/pexels-photo-1234652.jpeg",
-    "https://images.pexels.com/photos/1234563/pexels-photo-1234563.jpeg",
-    "https://images.pexels.com/photos/1435897/pexels-photo-1435897.jpeg",
+    "https://images.pexels.com/photos/1435897/pexels-photo-1435897.jpeg", // Example diet-related image
     "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg", 
     "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg",
     "https://images.pexels.com/photos/1640776/pexels-photo-1640776.jpeg",
     "https://images.pexels.com/photos/1435898/pexels-photo-1435898.jpeg"
   ];
-
-  const [backgroundImage, setBackgroundImage] = useState(0);
-
+  // State to hold the randomly selected background
+  const [backgroundImage, setBackgroundImage] = useState("1");
+  // Randomly select a background image when the component mounts
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * backgroundImages.length);
     setBackgroundImage(backgroundImages[randomIndex]);
   }, []);
-
   const styles = {
     body: {
       fontFamily: "Arial, sans-serif",
@@ -85,16 +80,27 @@ const PricingTable = () => {
     },
     planDetailItem: {
       margin: "10px 0",
+      display: "flex",
+      alignItems: "center",
+    },
+    symbolBox: {
+      border: "1px solid #ccc",
+      borderRadius: "3px",
+      padding: "2px 8px",
+      marginleft: "10px",
+      minWidth: "20px",
+      textAlign: "center",
+      fontWeight: "bold",
     },
     selectPlan: {
       textDecoration: "none",
       padding: "10px 20px",
-      borderRadius: "5px",
+      borderRadius: "10px",
       backgroundColor: "#ff4081",
-      color: "white",
+      color: "green",
       fontWeight: "bold",
-      // display: "inline-block",
-      marginTop: "10px",
+      display: "inline-block",
+      marginTop: "50px",
     },
     animatedBackground: {
       position: "absolute",
@@ -113,22 +119,35 @@ const PricingTable = () => {
   return (
     <div style={styles.body}>
       <div style={styles.animatedBackground}></div>
-      {/* <h1 style={styles.heading}>Our Pricing Table</h1> */}
+      <h1 style={styles.heading}>Our Pricing Table</h1>
       <p style={styles.paragraph}>Choose a plan that suits your needs</p>
 
       <div style={styles.pricingTable}>
+        {/* Weekly Plan */}
         <div style={styles.plan}>
           <div style={{ ...styles.planHeader, ...styles.weekly }}>
             Weekly Plan
           </div>
           <div style={styles.price}>$11.80/week</div>
           <ul style={styles.planDetails}>
-            <li style={styles.planDetailItem}>✓ Customized Weekly Meal Plan</li>
-            <li style={styles.planDetailItem}>✓ Nutritional Breakdown</li>
-            <li style={styles.planDetailItem}>✓ 1 Recipe per Meal</li>
-            <li style={styles.planDetailItem}>✓ Grocery List for the Week</li>
-            <li style={styles.planDetailItem}>✗ Calorie and Macronutrient Tracker</li>
-            <li style={styles.planDetailItem}>✗ Priority Customer Support</li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> Customized Weekly Meal Plan
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> Nutritional Breakdown
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> 1 Recipe per Meal
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> Grocery List for the Week
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✗</span> Calorie and Macronutrient Tracker
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✗</span> Priority Customer Support
+            </li>
           </ul>
           <a
             href="#"
@@ -140,18 +159,31 @@ const PricingTable = () => {
           </a>
         </div>
 
+        {/* Monthly Plan */}
         <div style={styles.plan}>
           <div style={{ ...styles.planHeader, ...styles.monthly }}>
             Monthly Plan
           </div>
           <div style={styles.price}>$75.80/month</div>
           <ul style={styles.planDetails}>
-            <li style={styles.planDetailItem}>✓ Customized Monthly Meal Plan</li>
-            <li style={styles.planDetailItem}>✓ Nutritional Breakdown for Each Meal</li>
-            <li style={styles.planDetailItem}>✓ 3 Recipes per Meal</li>
-            <li style={styles.planDetailItem}>✓ Weekly Grocery List</li>
-            <li style={styles.planDetailItem}>✓ Calorie and Macronutrient Tracker</li>
-            <li style={styles.planDetailItem}>✓ Priority Customer Support</li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> Customized Monthly Meal Plan
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> Nutritional Breakdown for Each Meal
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> 3 Recipes per Meal
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> Weekly Grocery List
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> Calorie and Macronutrient Tracker
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> Priority Customer Support
+            </li>
           </ul>
           <a
             href="#"
@@ -162,19 +194,35 @@ const PricingTable = () => {
             Select Plan
           </a>
         </div>
+
+        {/* Yearly Plan */}
         <div style={styles.plan}>
           <div style={{ ...styles.planHeader, ...styles.yearly }}>
             Yearly Plan
           </div>
           <div style={styles.price}>$125.80/year</div>
           <ul style={styles.planDetails}>
-            <li style={styles.planDetailItem}>✓ Customized Yearly Meal Plan</li>
-            <li style={styles.planDetailItem}>✓ Nutritional Breakdown & Progress Reports</li>
-            <li style={styles.planDetailItem}>✓ Unlimited Recipes per Meal</li>
-            <li style={styles.planDetailItem}>✓ Grocery List Auto-Sync with Apps</li>
-            <li style={styles.planDetailItem}>✓ Calorie, Macronutrient, and Micronutrient Tracker</li>
-            <li style={styles.planDetailItem}>✓ Exclusive Access to New Recipes & Features</li>
-            <li style={styles.planDetailItem}>✓ 24/7 VIP Customer Support</li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> Customized Yearly Meal Plan
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> Nutritional Breakdown & Progress Reports
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> Unlimited Recipes per Meal
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> Grocery List Auto-Sync with Apps
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> Calorie, Macronutrient, and Micronutrient Tracker
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> Exclusive Access to New Recipes & Features
+            </li>
+            <li style={styles.planDetailItem}>
+              <span style={styles.symbolBox}>✓</span> 24/7 VIP Customer Support
+            </li>
           </ul>
           <a
             href="#"

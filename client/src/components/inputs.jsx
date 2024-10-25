@@ -10,7 +10,7 @@ function Inputs() {
         goal: 'weight gain',
         preference: 'vegetarian'
     };
-    const breakfast_menu = {
+    const [breakfast_menu, setBreakfastMenu] = useState( {
         monday: '',
         tuesday: '',
         wednesday: '',
@@ -18,7 +18,8 @@ function Inputs() {
         friday: '',
         saturday: '',
         sunday: ''
-    };
+    });
+
     const [formData, setFormData] = useState(initialFormData);
     const [submitted, setSubmitted] = useState(false);
     const [errors, setErrors] = useState({});
@@ -90,6 +91,84 @@ function Inputs() {
                 console.error('Error fetching data:', error);
             });
     }, []);
+
+    // useEffect(() => {
+    //     const fetchData = async (mealType, maxCalories) => {
+    //         try {
+    //             const response = await fetch(`http://localhost:3000/${mealType}`);
+    //             const data = await response.json();
+    //             console.log(`Data received from backend for ${mealType}:`, data);
+    //
+    //             let totalCalories = 0;
+    //             const selectedItems = [];
+    //
+    //             for (const item of data) {
+    //                 if (totalCalories + item.calories <= maxCalories) {
+    //                     totalCalories += item.calories;
+    //                     selectedItems.push(item.name);
+    //                 } else {
+    //                     break;
+    //                 }
+    //             }
+    //
+    //             console.log(`Total calories of selected ${mealType} items:`, totalCalories);
+    //
+    //             setBreakfastMenu(prevMenu => ({
+    //                 ...prevMenu,
+    //                 monday: {
+    //                     ...prevMenu.monday,
+    //                     [mealType]: selectedItems.join(', ')
+    //                 }
+    //             }));
+    //         } catch (error) {
+    //             console.error(`Error fetching ${mealType} data:`, error);
+    //         }
+    //     };
+    //
+    //     if (mealBreakdown.breakfast) fetchData('breakfast', mealBreakdown.breakfast);
+    //     if (mealBreakdown.lunch) fetchData('lunch', mealBreakdown.lunch);
+    //     if (mealBreakdown.dinner) fetchData('dinner', mealBreakdown.dinner);
+    //     if (mealBreakdown.snacks) fetchData('snacks', mealBreakdown.snacks);
+    // }, [mealBreakdown]);
+    useEffect(() => {
+        const fetchData = async (mealType, maxCalories) => {
+            try {
+                const response = await fetch(`http://localhost:3000/${mealType}`);
+                const data = await response.json();
+                console.log(`Data received from backend for ${mealType}:`, data);
+
+                let totalCalories = 0;
+                const selectedItems = [];
+
+                for (const item of data) {
+                    if (totalCalories + item.calories <= maxCalories) {
+                        totalCalories += item.calories;
+                        selectedItems.push(item.name);
+                    } else {
+                        break;
+                    }
+                }
+
+                console.log(`Total calories of selected ${mealType} items:`, totalCalories);
+
+                setBreakfastMenu(prevMenu => ({
+                    ...prevMenu,
+                    monday: {
+                        ...prevMenu.monday,
+                        [mealType]: selectedItems.join(', ')
+                    }
+                }));
+            } catch (error) {
+                console.error(`Error fetching ${mealType} data:`, error);
+            }
+        };
+
+        if (mealBreakdown.breakfast) fetchData('breakfast', mealBreakdown.breakfast);
+        if (mealBreakdown.lunch) fetchData('lunch', mealBreakdown.lunch);
+        if (mealBreakdown.dinner) fetchData('dinner', mealBreakdown.dinner);
+        if (mealBreakdown.snacks) fetchData('snacks', mealBreakdown.snacks);
+    }, [mealBreakdown]);
+
 
     function calculateBMR(gender, weight, height, age) {
         if (gender === 'male') {
@@ -227,29 +306,29 @@ function Inputs() {
 
                 {showTable && (
                     <>
-                        <h4 style={{color: 'white', alignItems: "center", textAlign: 'center', marginTop: 20}}>Input Data</h4>
-                        <table className="bg-white">
-                            <thead>
-                            <tr>
-                                <th>Age</th>
-                                <th>Height</th>
-                                <th>Weight</th>
-                                <th>Goal</th>
-                                <th>I'm a</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {fetchedData.map((data, index) => (
-                                <tr key={index}>
-                                    <td>{data.age}</td>
-                                    <td>{data.height}</td>
-                                    <td>{data.weight}</td>
-                                    <td>{data.goal}</td>
-                                    <td>{data.preference}</td>
-                                </tr>
-                            ))}
-                            </tbody>
-                        </table>
+                        {/*<h4 style={{color: 'white', alignItems: "center", textAlign: 'center', marginTop: 20}}>Input Data</h4>*/}
+                        {/*<table className="bg-white">*/}
+                        {/*    <thead>*/}
+                        {/*    <tr>*/}
+                        {/*        <th>Age</th>*/}
+                        {/*        <th>Height</th>*/}
+                        {/*        <th>Weight</th>*/}
+                        {/*        <th>Goal</th>*/}
+                        {/*        <th>I'm a</th>*/}
+                        {/*    </tr>*/}
+                        {/*    </thead>*/}
+                        {/*    <tbody>*/}
+                        {/*    {fetchedData.map((data, index) => (*/}
+                        {/*        <tr key={index}>*/}
+                        {/*            <td>{data.age}</td>*/}
+                        {/*            <td>{data.height}</td>*/}
+                        {/*            <td>{data.weight}</td>*/}
+                        {/*            <td>{data.goal}</td>*/}
+                        {/*            <td>{data.preference}</td>*/}
+                        {/*        </tr>*/}
+                        {/*    ))}*/}
+                        {/*    </tbody>*/}
+                        {/*</table>*/}
                         <h4 style={{color: 'white', alignItems: "center", textAlign: 'center', marginTop: 20}}>Schedule</h4>
                         <table className="bg-white">
                             <thead>
@@ -265,66 +344,87 @@ function Inputs() {
                             <tbody>
                             <tr>
                                 <td>Monday</td>
-                                <td>{breakfast_menu.monday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
+                                <td>{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
                                 </td>
-                                <td><br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
-                                <td><br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
-                                <td><br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
-                                <td>{totalCalories}</td>
+                                <td>{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small>
+                                </td>
+                                <td>{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small>
+                                </td>
+                                <td>{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small>
+                                </td>
+                                <td>{totalCalories.toFixed(2)}</td>
                             </tr>
                             <tr>
                                 <td>Tuesday</td>
-                                <td>{breakfast_menu.tuesday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
+                                <td>{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
                                 </td>
-                                <td><br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
-                                <td><br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
-                                <td><br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
-                                <td>{totalCalories}</td>
+                                <td>{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small>
+                                </td>
+                                <td>{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small>
+                                </td>
+                                <td>{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small>
+                                </td>
+                                <td>{totalCalories.toFixed(2)}</td>
                             </tr>
                             <tr>
                                 <td>Wednesday</td>
-                                <td>{breakfast_menu.wednesday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
+                                <td>{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
                                 </td>
-                                <td><br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
-                                <td><br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
-                                <td><br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
-                                <td>{totalCalories}</td>
+                                <td>{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small>
+                                </td>
+                                <td>{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small>
+                                </td>
+                                <td>{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small>
+                                </td>
+                                <td>{totalCalories.toFixed(2)}</td>
                             </tr>
                             <tr>
                                 <td>Thursday</td>
-                                <td>{breakfast_menu.thursday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
+                                <td>{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
                                 </td>
-                                <td><br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
-                                <td><br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
-                                <td><br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
-                                <td>{totalCalories}</td>
+                                <td>{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small>
+                                </td>
+                                <td>{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small>
+                                </td>
+                                <td>{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small>
+                                </td>
+                                <td>{totalCalories.toFixed(2)}</td>
                             </tr>
                             <tr>
                                 <td>Friday</td>
-                                <td>{breakfast_menu.friday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
+                                <td>{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
                                 </td>
-                                <td><br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
-                                <td><br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
-                                <td><br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
-                                <td>{totalCalories}</td>
+                                <td>{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small>
+                                </td>
+                                <td>{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small>
+                                </td>
+                                <td>{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small>
+                                </td>
+                                <td>{totalCalories.toFixed(2)}</td>
                             </tr>
                             <tr>
                                 <td>Saturday</td>
-                                <td>{breakfast_menu.saturday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
+                                <td>{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
                                 </td>
-                                <td><br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
-                                <td><br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
-                                <td><br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
-                                <td>{totalCalories}</td>
+                                <td>{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small>
+                                </td>
+                                <td>{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small>
+                                </td>
+                                <td>{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small>
+                                </td>
+                                <td>{totalCalories.toFixed(2)}</td>
                             </tr>
                             <tr>
                                 <td>Sunday</td>
-                                <td>{breakfast_menu.sunday}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
+                                <td>{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
                                 </td>
-                                <td><br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
-                                <td><br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
-                                <td><br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
-                                <td>{totalCalories}</td>
+                                <td>{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small>
+                                </td>
+                                <td>{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small>
+                                </td>
+                                <td>{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small>
+                                </td>
+                                <td>{totalCalories.toFixed(2)}</td>
                             </tr>
                             <tr>
                                 <td>Total</td>
@@ -345,3 +445,4 @@ function Inputs() {
 }
 
 export default Inputs;
+
