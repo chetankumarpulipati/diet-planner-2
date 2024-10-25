@@ -306,29 +306,29 @@ function Inputs() {
 
                 {showTable && (
                     <>
-                        {/*<h4 style={{color: 'white', alignItems: "center", textAlign: 'center', marginTop: 20}}>Input Data</h4>*/}
-                        {/*<table className="bg-white">*/}
-                        {/*    <thead>*/}
-                        {/*    <tr>*/}
-                        {/*        <th>Age</th>*/}
-                        {/*        <th>Height</th>*/}
-                        {/*        <th>Weight</th>*/}
-                        {/*        <th>Goal</th>*/}
-                        {/*        <th>I'm a</th>*/}
-                        {/*    </tr>*/}
-                        {/*    </thead>*/}
-                        {/*    <tbody>*/}
-                        {/*    {fetchedData.map((data, index) => (*/}
-                        {/*        <tr key={index}>*/}
-                        {/*            <td>{data.age}</td>*/}
-                        {/*            <td>{data.height}</td>*/}
-                        {/*            <td>{data.weight}</td>*/}
-                        {/*            <td>{data.goal}</td>*/}
-                        {/*            <td>{data.preference}</td>*/}
-                        {/*        </tr>*/}
-                        {/*    ))}*/}
-                        {/*    </tbody>*/}
-                        {/*</table>*/}
+                        <h4 style={{color: 'white', alignItems: "center", textAlign: 'center', marginTop: 20}}>Input Data</h4>
+                        <table className="bg-white">
+                            <thead>
+                            <tr>
+                                <th>Age</th>
+                                <th>Height</th>
+                                <th>Weight</th>
+                                <th>Goal</th>
+                                <th>I'm a</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {fetchedData.map((data, index) => (
+                                <tr key={index}>
+                                    <td>{data.age}</td>
+                                    <td>{data.height}</td>
+                                    <td>{data.weight}</td>
+                                    <td>{data.goal}</td>
+                                    <td>{data.preference}</td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
                         <h4 style={{color: 'white', alignItems: "center", textAlign: 'center', marginTop: 20}}>Schedule</h4>
                         <table className="bg-white">
                             <thead>
