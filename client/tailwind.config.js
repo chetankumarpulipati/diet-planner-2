@@ -5,7 +5,9 @@ module.exports = {
     './public/index.html',
   ],
   theme: {
-    extend: {},
+    extend: {
+      arial: ['Arial', 'Sans-serif'],
+    },
   },
   plugins: [
       require('@tailwindcss/forms'),
