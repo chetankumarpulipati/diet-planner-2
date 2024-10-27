@@ -1,32 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 .register-container {
-    max-width: 1000px;
-    width: 550px;
+    width: 900px;
+    border-radius: 10px;
 }
 
 .registration-page{
+    margin: 0;
+    padding: 0;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
-    background-color: #d1d5db;
+    background-color: #1f2937;
+    overflow: hidden;
+    scroll-behavior: smooth;
 }
-
+  
 form{
     background-color: #1f2937;
-    padding: 35px;
 }
 .register-container h2 {
     text-align: center;
     margin-bottom: 25px;
-    font-family: 'Arial', sans-serif;
+    font-family: "Kaushan Script", cursive;
     color: white;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 50px;
 }
 
 .register-container label {
@@ -36,6 +39,7 @@ form{
     color: white;
     font-size: 16px;
     margin-left: 20px;
+    font-size: 20px;
 }
 .register-container input,
 .register-container select {
@@ -48,6 +52,7 @@ form{
     font-size: 16px;
     transition: border 0.3s ease;
     color: white;
+    height: 50px;
 }
 
 .register-container input:focus,
@@ -55,23 +60,6 @@ form{
     border-color: #007bff;
     outline: none;
 }
-
-/*.register-container button {*/
-/*    width: 100%;*/
-/*    padding: 12px;*/
-/*    background-color: #28a745;*/
-/*    color: #fff;*/
-/*    border: none;*/
-/*    border-radius: 6px;*/
-/*    font-size: 18px;*/
-/*    font-weight: 600;*/
-/*    cursor: pointer;*/
-/*    transition: background-color 0.3s ease;*/
-/*}*/
-
-/*.register-container button:hover {*/
-/*    background-color: #218838;*/
-/*}*/
 
 .mobile-input-container {
     display: flex;

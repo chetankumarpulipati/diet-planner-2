@@ -169,9 +169,9 @@ function Inputs() {
     }
 
     return (
-        <div className="p-8 bg-gray-300 min-h-screen flex items-center justify-center">
-            <form onSubmit={handleSubmit} className="bg-gray-800 p-8 rounded-lg shadow-md w-full max-w-5xl space-y-6">
-                <h2 className="text-2xl font-bold text-center text-white">Details</h2>
+        <div className="bg-gray-800 min-h-screen flex items-center justify-center">
+            <form onSubmit={handleSubmit} className="bg-gray-800 p-8 rounded-lg w-full max-w-5xl space-y-6">
+                <h2 className="text-5xl font-bold text-center text-yellow-200 mb-5">Get Your Schedule!!</h2>
 
                 <label className="ml-6 block mb-2 text-lg font-sans text-gray-900 dark:text-white">Age</label>
                 <input

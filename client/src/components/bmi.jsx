@@ -37,7 +37,7 @@ function BmiCalculator() {
   };
 
   return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-800">
         {showAlert && (
             <div
                 className="p-2 mb-2 text-xs text-blue-800 rounded-l-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 absolute bottom-8 right-4"

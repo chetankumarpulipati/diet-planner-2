@@ -2,27 +2,27 @@ import React from 'react';
 
 function About() {
     return (
-        <div className="bg-gradient-to-b from-blue-50 to-blue-100 p-8 md:p-16 lg:p-24 text-gray-800">
+        <div className="bg-gradient-to-b from-gray-900 to-blue-100 p-8 md:p-16 lg:p-24 text-white">
             <div className="max-w-4xl mx-auto space-y-12">
 
-                <section className="text-center">
-                    <h2 className="text-4xl font-bold text-blue-900">About Us</h2>
-                    <p className="mt-4 text-lg text-gray-700">
+            <section className="border p-10 text-white border-white text-center rounded">
+                    <h2 className="text-4xl font-bold text-white">About Us</h2>
+                    <p className="mt-4 text-lg text-white">
                         Welcome to the Fitness App! Our mission is to help you track your fitness goals and monitor your
                         progress with ease.
                     </p>
-                    <p className="mt-2 text-lg text-gray-700">
+                    <p className="mt-2 text-lg text-white">
                         Our app provides a variety of features to assist you in your fitness journey, including workout
                         tracking, diet planning, and progress monitoring.
                     </p>
-                    <p className="mt-2 text-lg text-gray-700">
+                    <p className="mt-2 text-lg text-white">
                         We are dedicated to providing you with the best tools and resources to achieve your fitness
                         goals. Thank you for choosing our app!
                     </p>
                 </section>
 
                 <section className="team-section text-center">
-                    <h3 className="text-3xl font-semibold text-blue-800">Meet Our Team</h3>
+                    <h3 className="text-3xl font-semibold text-white">Meet Our Team</h3>
                     <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="team-member flex flex-col items-center">
                             <img
