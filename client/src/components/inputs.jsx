@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import '@fontsource/roboto'; 
+import '@fontsource/merriweather';
+import '@fontsource/lobster'; 
+import '@fontsource/montserrat';
 
 function Inputs() {
     const initialFormData = {
@@ -268,10 +272,10 @@ function Inputs() {
 
                 {showTable && (
                     <>
-                        <h4 style={{color: 'white', alignItems: "center", textAlign: 'center', marginTop: 20}}>Input Data</h4>
-                        <table className="bg-white">
+                    <h4 style={{color: '#fef08a', fontWeight: 'bold', alignItems: 'center', textAlign: 'center', marginTop: 20, fontFamily: 'merriweather'}}>Input Data</h4>
+                       <table className="bg-white shadow-lg rounded-lg overflow-hidden w-full">
                             <thead>
-                            <tr>
+                            <tr className="bg-gray-800 text-white text-left">
                                 <th>Age</th>
                                 <th>Height</th>
                                 <th>Weight</th>
@@ -291,113 +295,86 @@ function Inputs() {
                             ))}
                             </tbody>
                         </table>
-                        <h4 style={{color: 'white', alignItems: "center", textAlign: 'center', marginTop: 20}}>Schedule</h4>
-                        <table className="bg-white">
-                            <thead>
-                            <tr className="p-5">
-                                <th>Day</th>
-                                <th>Breakfast</th>
-                                <th>Lunch</th>
-                                <th>Dinner</th>
-                                <th>Snacks</th>
-                                <th>Total Calories</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>Monday</td>
-                                <td>{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small>
-                                </td>
-                                <td>{totalCalories.toFixed(2)}</td>
-                            </tr>
-                            <tr>
-                                <td>Tuesday</td>
-                                <td>{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small>
-                                </td>
-                                <td>{totalCalories.toFixed(2)}</td>
-                            </tr>
-                            <tr>
-                                <td>Wednesday</td>
-                                <td>{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small>
-                                </td>
-                                <td>{totalCalories.toFixed(2)}</td>
-                            </tr>
-                            <tr>
-                                <td>Thursday</td>
-                                <td>{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small>
-                                </td>
-                                <td>{totalCalories.toFixed(2)}</td>
-                            </tr>
-                            <tr>
-                                <td>Friday</td>
-                                <td>{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small>
-                                </td>
-                                <td>{totalCalories.toFixed(2)}</td>
-                            </tr>
-                            <tr>
-                                <td>Saturday</td>
-                                <td>{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small>
-                                </td>
-                                <td>{totalCalories.toFixed(2)}</td>
-                            </tr>
-                            <tr>
-                                <td>Sunday</td>
-                                <td>{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small>
-                                </td>
-                                <td>{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small>
-                                </td>
-                                <td>{totalCalories.toFixed(2)}</td>
-                            </tr>
-                            <tr>
-                                <td>Total</td>
-                                <td>{(mealBreakdown.breakfast * 7).toFixed(2)}</td>
-                                <td>{(mealBreakdown.lunch * 7).toFixed(2)}</td>
-                                <td>{(mealBreakdown.dinner * 7).toFixed(2)}</td>
-                                <td>{(mealBreakdown.snacks * 7).toFixed(2)}</td>
-                                <td><b>{(totalCalories * 7).toFixed(2)} </b></td>
-                            </tr>
-                            </tbody>
+                        <h4 style={{color: '#fef08a', alignItems: 'center', textAlign: 'center', marginTop: 20, fontFamily: 'merriweather', fontWeight: 'bold'}}>Your's personalised schedule</h4>
+                        <table className="bg-white shadow-lg rounded-lg overflow-hidden w-full">
+                                <thead>
+                                    <tr className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white">
+                                    <th className="p-4">Day</th>
+                                    <th className="p-4">Breakfast</th>
+                                    <th className="p-4">Lunch</th>
+                                    <th className="p-4">Dinner</th>
+                                    <th className="p-4">Snacks</th>
+                                    <th className="p-4">Total Calories</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr className="bg-red-100 border-b">
+                                    <td className="p-4">Monday</td>
+                                    <td className="p-4">{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
+                                    <td className="p-4">{totalCalories.toFixed(2)}</td>
+                                    </tr>
+                                    <tr className="bg-yellow-100 border-b">
+                                    <td className="p-4">Tuesday</td>
+                                    <td className="p-4">{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
+                                    <td className="p-4">{totalCalories.toFixed(2)}</td>
+                                    </tr>
+                                    <tr className="bg-green-100 border-b">
+                                    <td className="p-4">Wednesday</td>
+                                    <td className="p-4">{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
+                                    <td className="p-4">{totalCalories.toFixed(2)}</td>
+                                    </tr>
+                                    <tr className="bg-blue-100 border-b">
+                                    <td className="p-4">Thursday</td>
+                                    <td className="p-4">{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
+                                    <td className="p-4">{totalCalories.toFixed(2)}</td>
+                                    </tr>
+                                    <tr className="bg-indigo-100 border-b">
+                                    <td className="p-4">Friday</td>
+                                    <td className="p-4">{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
+                                    <td className="p-4">{totalCalories.toFixed(2)}</td>
+                                    </tr>
+                                    <tr className="bg-purple-100 border-b">
+                                    <td className="p-4">Saturday</td>
+                                    <td className="p-4">{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
+                                    <td className="p-4">{totalCalories.toFixed(2)}</td>
+                                    </tr>
+                                    <tr className="bg-pink-100 border-b">
+                                    <td className="p-4">Sunday</td>
+                                    <td className="p-4">{breakfast_menu.monday.breakfast}<br/><small>calories: {mealBreakdown.breakfast.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.lunch}<br/><small>calories: {mealBreakdown.lunch.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.dinner}<br/><small>calories: {mealBreakdown.dinner.toFixed(2)}</small></td>
+                                    <td className="p-4">{breakfast_menu.monday.snacks}<br/><small>calories: {mealBreakdown.snacks.toFixed(2)}</small></td>
+                                    <td className="p-4">{totalCalories.toFixed(2)}</td>
+                                    </tr>
+                                    <tr className="bg-gray-200">
+                                    <td className="p-4 font-bold">Total</td>
+                                    <td className="p-4 font-bold">{(mealBreakdown.breakfast * 7).toFixed(2)}</td>
+                                    <td className="p-4 font-bold">{(mealBreakdown.lunch * 7).toFixed(2)}</td>
+                                    <td className="p-4 font-bold">{(mealBreakdown.dinner * 7).toFixed(2)}</td>
+                                    <td className="p-4 font-bold">{(mealBreakdown.snacks * 7).toFixed(2)}</td>
+                                    <td className="p-4 font-bold">{(totalCalories * 7).toFixed(2)}</td>
+                                    </tr>
+                                </tbody>
                         </table>
+
                     </>
                 )}
             </form>
