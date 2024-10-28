@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
@@ -11,32 +17,41 @@
 }
 
 .login-container {
-    max-width: 1000px;
-    width: 550px;
+    width: 1000px;
+    padding: 10px;
+    border-radius: 10px;
+    height: 100vh;
 }
 
 .login-page {
+    margin: 0;
+    padding: 0;
     height: auto;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
-    background-color: #d1d5db;
+    background-color: #1f2937;
+    scroll-behavior: smooth;
 }
 
 .login-container h2 {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 60px;
     font-weight: 600;
-    color: white;
+    color: #eab308;
+    font-family: "Kaushan Script", cursive;
+
 }
 
 .login-container label {
     display: block;
+    font-size: 30px;
     margin-bottom: 8px;
     font-weight: bold;
     color: white;
+    font-family: "Kaushan Script", cursive;
 }
 
 .login-container input {
@@ -84,7 +99,7 @@
 }
 
 .login-container .forgot-password a {
-    color: #007bff;
+    color: #1f2937;
     text-decoration: none;
     font-weight: bold;
 }

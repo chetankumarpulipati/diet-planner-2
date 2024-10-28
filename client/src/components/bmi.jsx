@@ -47,7 +47,7 @@ function BmiCalculator() {
             </div>
         )}
         <div className="flex">
-          <div className="bmi-calculator max-w-sm w-full p-5 rounded-l-lg bg-gray-800 mt-5">
+          <div className="bmi-calculator max-w-md w-full p-5 rounded-l-lg bg-gray-800 mt-5">
             <h1 className="text-center text-2xl font-bold text-blue-500 mb-6">BMI Calculator</h1>
             <div className="input-group mb-4">
               <label htmlFor="weight" className="text-white block mb-3 font-bold ml-6 text-lg">Weight (kg):</label>
@@ -97,7 +97,7 @@ function BmiCalculator() {
               </div>
           )}
           <div className="flex items-center justify-center mt-16 ml-24">
-            <div className="bmi-ranges max-h-60 overflow-auto p-3 rounded-lg bg-gray-800 ml-19">
+            <div className="bmi-ranges max-h-60 w-full overflow-none p-3 rounded-lg bg-gray-800">
               <h2 className="text-center text-xl font-bold text-blue-500 mb-4">BMI Ranges</h2>
               <ul className="text-white">
                 <li>➡️Underweight: BMI &lt; 18.5</li>

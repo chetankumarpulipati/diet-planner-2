@@ -5,8 +5,8 @@ function About() {
         <div className="bg-gradient-to-b from-gray-900 to-blue-100 p-8 md:p-16 lg:p-24 text-white">
             <div className="max-w-4xl mx-auto space-y-12">
 
-            <section className="border p-10 text-white border-white text-center rounded">
-                    <h2 className="text-4xl font-bold text-white">About Us</h2>
+                <section className="text-white text-center rounded mb-11">
+                    <h2 className="text-4xl font-bold text-yellow-500">About Us</h2>
                     <p className="mt-4 text-lg text-white">
                         Welcome to the Fitness App! Our mission is to help you track your fitness goals and monitor your
                         progress with ease.
@@ -22,31 +22,31 @@ function About() {
                 </section>
 
                 <section className="team-section text-center">
-                    <h3 className="text-3xl font-semibold text-white">Meet Our Team</h3>
+                    <h3 className="text-3xl font-semibold text-yellow-500">Meet Our Team</h3>
                     <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="team-member flex flex-col items-center">
                             <img
                                 className="w-32 h-32 rounded-full shadow-md hover:shadow-lg transition-shadow duration-200"
                                 src="../images/people.jpg"
                                 alt="Chetan Kumar"/>
-                            <h4 className="mt-4 text-xl font-semibold text-blue-800">Chetan Kumar Pulipati</h4>
-                            <p className="text-gray-600">CEO & Founder</p>
+                            <h4 className="mt-4 text-xl font-semibold text-white">Chetan Kumar Pulipati</h4>
+                            <p className="text-black">CEO & Founder</p>
                         </div>
                         <div className="team-member flex flex-col items-center">
                             <img
                                 className="w-32 h-32 rounded-full shadow-md hover:shadow-lg transition-shadow duration-200"
                                 src="../images/people.jpg"
                                 alt="Danunjaya Reddy"/>
-                            <h4 className="mt-4 text-xl font-semibold text-blue-800">Danunjaya Reddy</h4>
-                            <p className="text-gray-600">Investor</p>
+                            <h4 className="mt-4 text-xl font-semibold text-white">Danunjaya Reddy</h4>
+                            <p className="text-black">Investor</p>
                         </div>
                         <div className="team-member flex flex-col items-center">
                             <img
                                 className="w-32 h-32 rounded-full shadow-md hover:shadow-lg transition-shadow duration-200"
                                 src="../images/people.jpg"
                                 alt="durga Suresh"/>
-                            <h4 className="mt-4 text-xl font-semibold text-blue-800">Durga Suresh</h4>
-                            <p className="text-gray-600">Investor</p>
+                            <h4 className="mt-4 text-xl font-semibold text-white">Durga Suresh</h4>
+                            <p className="text-black">Investor</p>
                         </div>
                     </div>
                 </section>
@@ -67,21 +67,21 @@ function About() {
 
                 <section className="contact-section text-center bg-gray-800 text-white p-8 rounded-lg">
                     <h3 className="text-3xl font-semibold">Contact Us</h3>
-                    <form className="mt-6 space-y-4 max-w-lg mx-auto">
+                    <form className="mt-6 space-y-4 w-full">
                         <label className="block text-left">
                             <span>Name:</span>
                             <input type="text" name="name"
-                                   className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"/>
+                                   className="mt-1 block text-black w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"/>
                         </label>
                         <label className="block text-left">
                             <span>Email:</span>
                             <input type="email" name="email"
-                                   className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"/>
+                                   className="text-black mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"/>
                         </label>
                         <label className="block text-left">
                             <span>Message:</span>
                             <textarea name="message"
-                                      className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"
+                                      className="text-black mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"
                                       rows="4"></textarea>
                         </label>
                         <button type="submit"
