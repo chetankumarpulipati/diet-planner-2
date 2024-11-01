@@ -96,7 +96,7 @@ function Home() {
                     role="alert"
                     onClick={(e) => e.stopPropagation()}
                 >
-                  <span className="font-medium">Success!</span> {alertMessage}
+                  <span className="font-medium"></span> {alertMessage}
                 </div>
             )}
             <div className="relative overflow-hidden bg-gray-900 py-16 sm:py-24">
@@ -126,7 +126,8 @@ function Home() {
                         </svg>
                       </div>
                       <dt className="mt-4 font-semibold text-white">Weekly articles</dt>
-                      <dd className="mt-1 leading-7 text-gray-400"> Mindful Monday Start your week with practical, science-backed mindfulness techniques to keep you grounded and focused.
+                      <dd className="mt-1 leading-7 text-gray-400"> Mindful Monday Start your week with practical,
+                        science-backed mindfulness techniques to keep you grounded and focused.
                       </dd>
                     </div>
                     <div className="flex flex-col items-start align-items-center">
@@ -148,22 +149,22 @@ function Home() {
             </div>
             <div className="border-t border-white mb-4"></div>
 
-            <div className="flex justify-content-evenly mb-4">
-              <div className="flex flex-col space-y-2">
+            <div className="flex flex-col sm:flex-row justify-between mb-4">
+              <div className="flex flex-col space-y-2 mb-4 sm:mb-0">
                 <a href="#" className="text-gray-400 hover:text-white">Privacy Policy</a>
                 <a href="#" className="text-gray-400 hover:text-white">Terms & Conditions</a>
                 <a href="#" className="text-gray-400 hover:text-white">About</a>
               </div>
-              <div className="flex flex-col space-y-2">
+              <div className="flex flex-col space-y-2 mb-4 sm:mb-0">
                 <a href="#" className="text-gray-400 hover:text-white">Careers</a>
                 <a href="#" className="text-gray-400 hover:text-white">Advertise with us</a>
                 <a href="#" className="text-gray-400 hover:text-white">Healthline</a>
               </div>
-              <div className="flex flex-col space-y-2 text-right">
-                <span className="text-center">Contact</span>
+              <div className="flex flex-col space-y-2 text-center sm:text-right">
+                <span>Contact</span>
                 <a href="mailto:chetankumarpulipati4@gmail.com"
                    className="text-gray-400 hover:text-white">chetankumarpulipati4@gmail.com</a>
-                <span className="text-center">Phone: +91 9963813470</span>
+                <span>Phone: +91 9963813470</span>
               </div>
             </div>
             <div className="border-t border-white"></div>
@@ -173,65 +174,125 @@ function Home() {
           </div>
         </footer>
       </div>
-  );
+);
 }
 
 const styles = {
   container: {
     fontFamily: "'Arial', sans-serif",
-    textAlign: "center",
-    color: "#333",
-    margin: "0",
-    padding: "0",
-  },
+        textAlign
+  :
+    "center",
+        color
+  :
+    "#333",
+        margin
+  :
+    "0",
+        padding
+  :
+    "0",
+  }
+,
   header: {
     backgroundColor: "#111827",
-    color: "white",
-    padding: "50px 20px",
-  },
+        color
+  :
+    "white",
+        padding
+  :
+    "50px 20px",
+  }
+,
   title: {
     fontSize: "2.5em",
-    margin: "0",
-    color: "white",
-    fontFamily: 'sans'
-  },
+        margin
+  :
+    "0",
+        color
+  :
+    "white",
+        fontFamily
+  :
+    'sans'
+  }
+,
   subtitle: {
     fontFamily: 'Lucida',
-    color: 'white',
-    fontSize: "1.2em",
-    margin: "10px 0 30px",
-  },
+        color
+  :
+    'white',
+        fontSize
+  :
+    "1.2em",
+        margin
+  :
+    "10px 0 30px",
+  }
+,
   button: {
     padding: "15px 30px",
-    fontSize: "1.2em",
-    color: "#4CAF50",
-    backgroundColor: "white",
-    border: "2px solid #4CAF50",
-    borderRadius: "5px",
-    cursor: "pointer",
-    transition: "background-color 0.3s",
-  },
+        fontSize
+  :
+    "1.2em",
+        color
+  :
+    "#4CAF50",
+        backgroundColor
+  :
+    "white",
+        border
+  :
+    "2px solid #4CAF50",
+        borderRadius
+  :
+    "5px",
+        cursor
+  :
+    "pointer",
+        transition
+  :
+    "background-color 0.3s",
+  }
+,
   imageSection: {
     margin: "30px 0",
-  },
+  }
+,
   image: {
     maxWidth: "100%",
-    height: "auto",
-  },
+        height
+  :
+    "auto",
+  }
+,
   mainContent: {
     padding: "40px 20px",
-    backgroundColor: '#fff',
-  },
+        backgroundColor
+  :
+    '#fff',
+  }
+,
   heading: {
     fontSize: "2em",
-    marginBottom: "10px",
-    fontFamily: 'sans',
-  },
+        marginBottom
+  :
+    "10px",
+        fontFamily
+  :
+    'sans',
+  }
+,
   paragraph: {
     fontSize: "1.2em",
-    lineHeight: "1.6",
-    marginBottom: "30px",
-  },
+        lineHeight
+  :
+    "1.6",
+        marginBottom
+  :
+    "30px",
+  }
+,
   footer: {
     backgroundColor: "#333",
     color: "white",

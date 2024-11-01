@@ -3,6 +3,7 @@ import '@fontsource/roboto';
 import '@fontsource/merriweather';
 import '@fontsource/lobster'; 
 import '@fontsource/montserrat';
+// import '../styles/inputs.css'
 
 function Inputs() {
     const initialFormData = {
@@ -177,18 +178,18 @@ function Inputs() {
             <form onSubmit={handleSubmit} className="bg-gray-800 p-8 rounded-lg w-full max-w-5xl space-y-6">
                 <h2 className="text-5xl font-bold text-center text-yellow-200 mb-5">Get Your Schedule!!</h2>
 
-                <label className="ml-6 block mb-2 text-lg font-sans text-gray-900 dark:text-white">Age</label>
+                <label className="ml-6 block mb-2 text-lg font-sans text-white">Age</label>
                 <input
                     type="text"
                     name="age"
                     value={formData.age}
                     onChange={handleChange}
                     placeholder="Enter your age"
-                    className={`bg-gray-500 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${errors.age ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:border-blue-500`}
+                    className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${errors.age ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:border-blue-500`}
                 />
                 {errors.age && <p className="text-red-500 text-xs mt-1">{errors.age}</p>}
 
-                <label className="ml-6 block mb-2 text-lg font-sans text-gray-900 dark:text-white">Height (cm)</label>
+                <label className="ml-6 block mb-2 text-lg font-sans text-white">Height (cm)</label>
                 <input
                     type="text"
                     name="height"
@@ -199,7 +200,7 @@ function Inputs() {
                 />
                 {errors.height && <p className="text-red-500 text-xs mt-1">{errors.height}</p>}
 
-                <label className="ml-6 block mb-2 text-lg font-sans text-gray-900 dark:text-white">Weight (kg)</label>
+                <label className="ml-6 block mb-2 text-lg font-sans text-white">Weight (kg)</label>
                 <input
                     type="text"
                     name="weight"
@@ -210,7 +211,7 @@ function Inputs() {
                 />
                 {errors.weight && <p className="text-red-500 text-xs mt-1">{errors.weight}</p>}
 
-                <label className="ml-6 block mb-2 text-lg font-sans text-gray-900 dark:text-white">Activity Level (Ex: active, moderate)</label>
+                <label className="ml-6 block mb-2 text-lg font-sans text-white">Activity Level (Ex: active, moderate)</label>
                 <select
                     name="activity"
                     value={formData.activity}
@@ -224,7 +225,7 @@ function Inputs() {
                     <option value="extra active">Extra Active</option>
                 </select>
 
-                <label className="ml-6 block mb-2 text-lg font-sans text-gray-900 dark:text-white" >Gender (M / F)</label>
+                <label className="ml-6 block mb-2 text-lg font-sans text-white" >Gender (M / F)</label>
                 <select
                     name="gender"
                     value={formData.gender}
@@ -235,7 +236,7 @@ function Inputs() {
                     <option value="female">Female</option>
                 </select>
 
-                <label className="ml-6 block mb-2 text-lg font-sans text-gray-900 dark:text-white">Goal (Ex: Gain / Loss)</label>
+                <label className="ml-6 block mb-2 text-lg font-sans text-white">Goal (Ex: Gain / Loss)</label>
                 <select
                     name="goal"
                     value={formData.goal}
@@ -246,7 +247,7 @@ function Inputs() {
                     <option value="weight loss">Weight Loss</option>
                 </select>
 
-                <label className="ml-6 block mb-2 text-lg font-sans text-gray-900 dark:text-white">I'm a</label>
+                <label className="ml-6 block mb-2 text-lg font-sans text-white">I'm a</label>
                 <select
                     name="preference"
                     value={formData.preference}

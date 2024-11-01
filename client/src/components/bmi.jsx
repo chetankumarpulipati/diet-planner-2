@@ -37,17 +37,17 @@ function BmiCalculator() {
   };
 
   return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-800">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-800 p-4 overflow-x-hidden">
         {showAlert && (
             <div
-                className="p-2 mb-2 text-xs text-blue-800 rounded-l-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 absolute bottom-8 right-4"
+                className="p-2 mb-2 text-xs text-blue-800 rounded-l-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 fixed bottom-8 right-4"
                 role="alert">
               <span className="font-medium">Info alert!</span> Please enter both weight and height.
               <button onClick={() => setShowAlert(false)} className="ml-2 text-red-500">X</button>
             </div>
         )}
-        <div className="flex">
-          <div className="bmi-calculator max-w-md w-full p-5 rounded-l-lg bg-gray-800 mt-5">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start w-full">
+          <div className="bmi-calculator max-w-md w-full p-5 rounded-lg bg-gray-800 mt-5 lg:mt-0 lg:mr-5">
             <h1 className="text-center text-2xl font-bold text-blue-500 mb-6">BMI Calculator</h1>
             <div className="input-group mb-4">
               <label htmlFor="weight" className="text-white block mb-3 font-bold ml-6 text-lg">Weight (kg):</label>
@@ -77,7 +77,7 @@ function BmiCalculator() {
             </button>
           </div>
           {bmi && bmiCategory && (
-              <div className="bmi-calculator mt-5 max-w-sm w-full p-5 rounded-r-lg bg-gray-800 flex flex-col items-center justify-center">
+              <div className="bmi-calculator mt-5 max-w-sm w-full p-5 rounded-lg bg-gray-800 flex flex-col items-center justify-center lg:ml-5">
                 <div className="relative mt-4 w-full">
                   <div className="h-4 w-full bg-gradient-to-r from-blue-400 via-green-400 to-red-400 rounded">
                     <div
@@ -96,9 +96,9 @@ function BmiCalculator() {
                 <p className="text-white text-xl font-bold text-center">Your BMI category is: {bmiCategory}</p>
               </div>
           )}
-          <div className="flex items-center justify-center mt-16 ml-24">
+          <div className="flex items-center justify-center mt-16 lg:mt-0 lg:ml-5">
             <div className="bmi-ranges max-h-60 w-full overflow-none p-3 rounded-lg bg-gray-800">
-              <h2 className="text-center text-xl font-bold text-blue-500 mb-4">BMI Ranges</h2>
+              <h2 className="text-center text-xl font-bold text-blue-500 mb-4 sm:mt-24">BMI Ranges</h2>
               <ul className="text-white">
                 <li>➡️Underweight: BMI &lt; 18.5</li>
                 <li>➡️Normal weight: BMI 18.5 - 24.9</li>
@@ -108,7 +108,7 @@ function BmiCalculator() {
             </div>
           </div>
         </div>
-        <BmiInfo/>
+        <BmiInfo />
       </div>
   );
 }

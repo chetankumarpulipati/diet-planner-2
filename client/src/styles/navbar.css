@@ -1,0 +1,27 @@
+.navbar-custom {
+    background-color: #343a40;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link,
+.navbar-custom .nav-dropdown {
+    color: #ffffff;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-dropdown:hover {
+    color: #d4d4d4;
+}
+
+.navbar-custom .navbar-brand {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    color: green;
+    font-weight: bold;
+}
+
+@media (max-width: 992px) {
+    .navbar-custom {
+        background-color: #007bff;
+    }
+}

@@ -1,0 +1,8 @@
+input, select, label {
+    color: white;
+}
+@media (max-width: 768px) {
+    input, select, label {
+        color: #ffffff;
+    }
+}
