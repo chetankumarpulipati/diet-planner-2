@@ -174,6 +174,7 @@ function Inputs() {
     }
 
     return (
+        <div>
         <div className="bg-gray-800 min-h-screen flex items-center justify-center">
             <form onSubmit={handleSubmit} className="bg-gray-800 p-8 rounded-lg w-full max-w-5xl space-y-6">
                 <h2 className="text-5xl font-bold text-center text-yellow-200 mb-5">Get Your Schedule!!</h2>
@@ -379,7 +380,9 @@ function Inputs() {
                     </>
                 )}
             </form>
-
+        </div>
+        <div>
+        </div>
         </div>
     );
 }
