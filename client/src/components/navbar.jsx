@@ -61,6 +61,7 @@ function NavigationBar() {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="ms-auto">
                                 <Nav.Link className="ms-3" as={Link} to="/" onClick={() => setExpanded(false)}>Home</Nav.Link>
+                                <Nav.Link className="ms-3" as={Link} to="/dashboard" onclick={()=>setExpanded(false)}>Dashboard</Nav.Link>
                                 <Nav.Link className="ms-3" as={Link} to="/bmi" onClick={() => setExpanded(false)}>BMI</Nav.Link>
                                 <Nav.Link className="ms-3" as={Link} to="/pricing" onClick={() => setExpanded(false)}>Pricing</Nav.Link>
                                 <Nav.Link className="ms-3" as={Link} to="/about" onClick={() => setExpanded(false)}>About</Nav.Link>

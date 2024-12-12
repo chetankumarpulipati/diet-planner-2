@@ -11,6 +11,7 @@ import Pricing from "./components/pricing";
 import Initial from './components/home_launch';
 import Bmi from './components/bmi';
 import NavigationBar from "./components/navbar";
+import Dashboard from './components/dashboard';
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/inputs" element={<Inputs />} />
                     <Route path="/bmi" element={<Bmi />} />
+                    <Route path="/dashboard" element={<Dashboard/>}/>
                 </Routes>
             </div>
         </Router>
