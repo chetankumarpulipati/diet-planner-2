@@ -907,3 +907,12 @@ User ID: c964b0c2-9d98-4fc4-bdf6-ff9d13c88ce7, URL: /breakfast, Method: GET, Tim
 User ID: 0f67baa2-a25f-45ca-912a-b58a06cbd562, URL: /lunch, Method: GET, Timestamp: 2024-11-15T07:31:14.623Z
 User ID: df7b23bd-bd75-483c-a4e5-1c911f054fd3, URL: /dinner, Method: GET, Timestamp: 2024-11-15T07:31:14.626Z
 User ID: e790a890-7eac-4f07-b406-17a62538bb35, URL: /snacks, Method: GET, Timestamp: 2024-11-15T07:31:14.628Z
+User ID: badd7fb7-8cb6-40ea-88c6-49750448797c, URL: /register, Method: POST, Timestamp: 2025-01-05T15:56:50.112Z
+User ID: 933858f8-9457-4703-b888-8024957e2041, URL: /data, Method: GET, Timestamp: 2025-01-05T15:58:40.277Z
+User ID: 72b446ce-f665-42de-ba74-bcaceb27f32c, URL: /data, Method: GET, Timestamp: 2025-01-05T16:01:54.952Z
+User ID: 253aea48-bf37-4b8f-a60d-8ec85b133d33, URL: /register, Method: POST, Timestamp: 2025-01-05T16:06:33.730Z
+User ID: 2679212b-8ed8-4633-90a4-dcbe35dc6379, URL: /register, Method: POST, Timestamp: 2025-01-05T16:06:36.198Z
+User ID: 24635937-368a-424d-94a0-7422d8bc4bbb, URL: /register, Method: POST, Timestamp: 2025-01-05T16:06:45.823Z
+User ID: a6ea93bb-8587-4ac2-8e8f-4e7c464e9a39, URL: /register, Method: POST, Timestamp: 2025-01-05T16:07:46.864Z
+User ID: 0c862eb3-e496-462b-92bc-75fb68350dad, URL: /register, Method: POST, Timestamp: 2025-01-05T16:09:39.936Z
+User ID: af1941f6-b0c4-44a6-ab26-7470f8ace8b6, URL: /register, Method: POST, Timestamp: 2025-01-05T16:13:51.109Z
