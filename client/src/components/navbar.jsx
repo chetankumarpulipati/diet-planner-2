@@ -12,6 +12,7 @@ function NavigationBar() {
     const email = localStorage.getItem('email');
     const [expanded, setExpanded] = useState(false);
     const navbarRef = useRef(null);
+    const [isLoading, setisLoading] = useState(false);
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -72,8 +73,14 @@ function NavigationBar() {
                                     </NavDropdown>
                                 ) : (
                                     <>
-                                        <Nav.Link className="ms-3" as={Link} to="/register" onClick={() => setExpanded(false)}>Sign up</Nav.Link>
-                                        <Nav.Link className="ms-3" as={Link} to="/login" onClick={() => setExpanded(false)}>Sign in</Nav.Link>
+                                        <Nav.Link className="ms-3"
+                                                  as={Link}
+                                                  to="/register"
+                                                  onClick={() => setExpanded(false)}>Sign up</Nav.Link>
+                                        <Nav.Link className="ms-3"
+                                                  as={Link}
+                                                  to="/login"
+                                                  onClick={() => setExpanded(false)}>Sign in</Nav.Link>
                                     </>
                                 )}
                             </Nav>

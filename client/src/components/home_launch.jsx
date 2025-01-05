@@ -69,6 +69,11 @@ function Home() {
           />
         </section>
 
+        <section>
+          <h2>Get Started</h2>
+
+        </section>
+
         <section style={styles.mainContent}>
           <h2 style={styles.heading}>Why Choose Us?</h2>
           <br></br>

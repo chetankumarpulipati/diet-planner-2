@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .register-container {
-    width: 900px;
+    width: 650px;
     border-radius: 10px;
 }
 
@@ -14,7 +14,7 @@
     padding: 0;
     height: auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     background-color: #1f2937;
     overflow: hidden;
@@ -22,7 +22,9 @@
 }
   
 form{
-    background-color: #1f2937;
+    background-color: #2d3748;
+    margin-right: 15px;
+    margin-top: 80px;
 }
 .register-container h2 {
     text-align: center;
@@ -100,4 +102,10 @@ form{
 button{
     color: white;
     background-color: #6b7280;
+}
+
+.white-border-form {
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 10px;
 }

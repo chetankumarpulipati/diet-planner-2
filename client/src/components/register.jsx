@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/register.css';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
     const [formData, setFormData] = useState({
-        full_name: '',
+        first_name: '',
+        last_name: '',
         country_code: '+91',
         mobile: '',
         organisation: '',
         email: '',
         password: ''
     });
-
+    const navigate = useNavigate();
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -23,27 +25,37 @@ function Register() {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:3000/register', formData);
-            alert(response.data.message);
-            setFormData({
-                full_name: '',
-                country_code: '+91',
-                mobile: '',
-                organisation: '',
-                email: '',
-                password: ''
-            });
+            // alert(response.data.message);
+
         } catch (error) {
             alert('Error registering user');
         }
+        setFormData({
+            first_name: '',
+            last_name: '',
+            country_code: '+91',
+            mobile: '',
+            organisation: '',
+            email: '',
+            password: ''
+        });
     };
 
     return (
         <div className="registration-page">
             <div className="register-container">
-                <form onSubmit={handleSubmit}>
+                <form className="white-border-form" onSubmit={handleSubmit}>
                     <h2>Sign Up</h2>
-                    <label>Full Name</label>
-                    <input type="text" name="full_name" value={formData.full_name} onChange={handleChange}
+                    {/*<label>Full Name</label>*/}
+                    {/*<input type="text" name="full_name" value={formData.full_name} onChange={handleChange}*/}
+                    {/*       className="border border-e-black-700 rounded-lg p-2 focus:border-blue-500 focus:outline-none"*/}
+                    {/*       required/>*/}
+                    <label>First Name</label>
+                    <input type="text" name="first_name" value={formData.first_name} onChange={handleChange}
+                           className="border border-e-black-700 rounded-lg p-2 focus:border-blue-500 focus:outline-none"
+                           required/>
+                    <label>Last Name</label>
+                    <input type="text" name="last_name" value={formData.last_name} onChange={handleChange}
                            className="border border-e-black-700 rounded-lg p-2 focus:border-blue-500 focus:outline-none"
                            required/>
                     <label>Mobile Number</label>
@@ -70,12 +82,12 @@ function Register() {
                     <label>Password</label>
                     <input type="password" name="password" value={formData.password} onChange={handleChange}
                            className="border border-e-black-700 rounded-lg p-3 mb-15 focus:border-blue-500 focus:outline-none"
-                           required/>
-                    
+                           required autoComplete="new-password"/>
                     <button type="submit"
-                        className="py-2.5 px-12 me-2 mb-4 text-lg bg-blue-500 text-white rounded">Sign up
+                            className="py-2.5 px-12 me-2 mb-4 text-lg bg-blue-500 text-white rounded">Sign up
                     </button>
                 </form>
+                <h3 style={{color:'white', textAlign: "center", padding: 15}}>Already have an account? Log In</h3>
             </div>
         </div>
     );

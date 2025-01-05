@@ -58,15 +58,13 @@ function Login() {
     const forgot_password = () => {
         setIsModalOpen(true);
     };
-
     const closeModal = () => {
         setIsModalOpen(false);
     };
 
     return (
         <div className="login-page">
-        <div className="login-container">
-            <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
+            <form className="login-container" onSubmit={handleSubmit}>
                 <h2>Login</h2>
                 <label>Email</label>
                 <input type="email" name="email" onChange={handleChange} required/>
@@ -79,7 +77,6 @@ function Login() {
                 <button type="submit">Login</button>
             </form>
             {isModalOpen && <ResetPasswordModal isOpen={isModalOpen} onClose={closeModal}/>}
-        </div>
         </div>
     );
 }

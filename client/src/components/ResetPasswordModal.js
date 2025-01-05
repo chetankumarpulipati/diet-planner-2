@@ -39,7 +39,7 @@ function ResetPasswordModal({ isOpen, onClose }) {
             <div className="modal-content">
                 <span className="close" onClick={onClose}>&times;</span>
                 <h2>Reset Password</h2>
-                <form onSubmit={handleEmailSubmit}>
+                <form className="mail-input" onSubmit={handleEmailSubmit}>
                     <input
                         type="email"
                         placeholder="Enter your email"
@@ -47,28 +47,9 @@ function ResetPasswordModal({ isOpen, onClose }) {
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                    <button type="submit">Verify Email</button>
+                    <button type="submit">Submit</button>
                 </form>
-                {message && <p>{message}</p>}
-                {message === 'Email verified' && (
-                    <form onSubmit={handlePasswordSubmit}>
-                        <input
-                            type="password"
-                            placeholder="Enter new password"
-                            value={newPassword}
-                            onChange={(e) => setNewPassword(e.target.value)}
-                            required
-                        />
-                        <input
-                            type="password"
-                            placeholder="Confirm new password"
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                            required
-                        />
-                        <button type="submit">Update Password</button>
-                    </form>
-                )}
+                {message === 'Password reset link sent to mail' && <p>{message}</p>}
             </div>
         </div>
     );
