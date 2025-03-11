@@ -20,7 +20,7 @@
 .navbar-custom .navbar-brand {
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
-    color: green;
+    color: white;
     font-weight: bold;
 }
 
@@ -28,4 +28,10 @@
     .navbar-custom {
         background-color: #007bff;
     }
+}
+
+.lavishly-yours-regular {
+    font-family: "Lavishly Yours", cursive;
+    font-weight: 400;
+    font-style: normal;
 }

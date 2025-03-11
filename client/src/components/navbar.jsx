@@ -55,7 +55,7 @@ function NavigationBar() {
             <Container fluid>
                 <Row className="w-100">
                     <Col xs={12} lg={3} className="text-center text-lg-start">
-                        <Navbar.Brand as={Link} to="/" className="d-none d-lg-block">Diet Scheduler</Navbar.Brand>
+                        <Navbar.Brand as={Link} to="/" className="lavishly-yours-regular d-none d-lg-block">Diet Scheduler</Navbar.Brand>
                     </Col>
                     <Col xs={12} lg={9} className="text-lg-end">
                         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />

@@ -13,7 +13,7 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use(cors());
 app.use(logAccess);
-
+// app.use(authenticate);
 
 const authenticate = (req, res, next) => {
     const token = req.headers.authorization?.split(' ')[1];
@@ -30,7 +30,7 @@ const authenticate = (req, res, next) => {
     }
 };
 
-app.use(authenticate); 
+
 
 mongoose.connect('mongodb://localhost:27017/diet-planner', {
     useNewUrlParser: true,
@@ -71,11 +71,10 @@ app.post('/register', async (req, res) => {
             password: hashedPassword
         });
         await newUser.save();
-        // res.status(200).json({ message: 'User registered successfully' });
-        res.status(200);
+        res.status(200).json({ message: 'User registered successfully' });
     } catch (error) {
         console.error('Error during registration:', error);
-        res.status(500).json({ message: 'Internal server error' });
+        res.status(500).json({ message: 'Internal server error', error: error.message });
     }
 });
 

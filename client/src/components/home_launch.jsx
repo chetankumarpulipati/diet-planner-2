@@ -51,7 +51,7 @@ function Home() {
   return (
       <div style={styles.container}>
         <header style={styles.header}>
-          <h1 style={styles.title}>Welcome to Diet Schedule System</h1>
+          <h1 style={styles.title}>Welcome to Diet Scheduler</h1>
           <br></br>
           <p style={styles.subtitle}>
             Your personalized diet planning and tracking system
@@ -63,14 +63,14 @@ function Home() {
 
         <section style={styles.imageSection}>
           <img
-              src="https://www.olivaclinic.com/wp-content/uploads/2024/05/1000-Calorie-Diet-Plan.jpg"
+              src="https://www.livofy.com/health/wp-content/uploads/2023/05/Healthy.png"
               alt="Healthy Food"
               style={styles.image}
           />
         </section>
 
         <section>
-          <h2>Get Started</h2>
+          {/*<h2>Get Started</h2>*/}
 
         </section>
 
@@ -185,119 +185,61 @@ function Home() {
 const styles = {
   container: {
     fontFamily: "'Arial', sans-serif",
-        textAlign
-  :
-    "center",
-        color
-  :
-    "#333",
-        margin
-  :
-    "0",
-        padding
-  :
-    "0",
-  }
-,
+        textAlign: "center",
+        color: "#333",
+        margin: "0",
+        padding: "0",
+  },
   header: {
     backgroundColor: "#111827",
-        color
-  :
-    "white",
-        padding
-  :
-    "50px 20px",
-  }
-,
+        color: "white",
+        padding: "50px 20px",
+      marginTop: "30px",
+  },
   title: {
     fontSize: "2.5em",
-        margin
-  :
-    "0",
-        color
-  :
-    "white",
-        fontFamily
-  :
-    'sans'
-  }
-,
+        margin:"0",
+        color: "white",
+        fontFamily: 'sans'
+  },
   subtitle: {
     fontFamily: 'Lucida',
-        color
-  :
-    'white',
-        fontSize
-  :
-    "1.2em",
-        margin
-  :
-    "10px 0 30px",
-  }
-,
+        color:'white',
+        fontSize: "1.0em",
+        margin: "10px 0 30px",
+  },
   button: {
     padding: "15px 30px",
-        fontSize
-  :
-    "1.2em",
-        color
-  :
-    "#4CAF50",
-        backgroundColor
-  :
-    "white",
-        border
-  :
-    "2px solid #4CAF50",
-        borderRadius
-  :
-    "5px",
-        cursor
-  :
-    "pointer",
-        transition
-  :
-    "background-color 0.3s",
-  }
-,
+        fontSize:"1.2em",
+        color: "#4CAF50",
+        backgroundColor: "white",
+        border: "2px solid #4CAF50",
+        borderRadius: "5px",
+        cursor: "pointer",
+        transition: "background-color 0.3s",
+  },
   imageSection: {
     margin: "30px 0",
   }
 ,
   image: {
     maxWidth: "100%",
-        height
-  :
-    "auto",
-  }
-,
+    height: "auto",
+  },
   mainContent: {
     padding: "40px 20px",
-        backgroundColor
-  :
-    '#fff',
-  }
-,
+      backgroundColor: '#fff',
+  },
   heading: {
     fontSize: "2em",
-        marginBottom
-  :
-    "10px",
-        fontFamily
-  :
-    'sans',
-  }
-,
+      marginBottom: "10px",
+      fontFamily: 'sans',
+  },
   paragraph: {
     fontSize: "1.2em",
-        lineHeight
-  :
-    "1.6",
-        marginBottom
-  :
-    "30px",
-  }
-,
+        lineHeight: "1.6",
+        marginBottom: "30px",
+  },
   footer: {
     backgroundColor: "#333",
     color: "white",

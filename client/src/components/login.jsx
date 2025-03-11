@@ -61,14 +61,13 @@ function Login() {
     const closeModal = () => {
         setIsModalOpen(false);
     };
-
     return (
         <div className="login-page">
+            <img src={require('../images/login-screen-4308924-3582001.webp')} alt="Login Image" className="login-image"/>
             <form className="login-container" onSubmit={handleSubmit}>
                 <h2>Login</h2>
                 <label>Email</label>
                 <input type="email" name="email" onChange={handleChange} required/>
-
                 <label>Password</label>
                 <input type="password" name="password" onChange={handleChange} required/>
                 <span onClick={forgot_password} className="centered-span-container"

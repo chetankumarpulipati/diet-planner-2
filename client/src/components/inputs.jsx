@@ -82,7 +82,7 @@ function Inputs() {
         setTimeout(() => {
             setLoading(false);
             setShowTable(true);
-            setIsButtonDisabled(false); // Enable the button after the schedule is displayed
+            setIsButtonDisabled(false);
         }, 600);
     };
 
@@ -175,8 +175,8 @@ function Inputs() {
 
     return (
         <div>
-        <div className="bg-gray-800 min-h-screen flex items-center justify-center">
-            <form onSubmit={handleSubmit} className="bg-gray-800 p-8 rounded-lg w-full max-w-5xl space-y-6">
+        <div className="bg-gray-800 min-h-screen flex items-center justify-content-center">
+            <form onSubmit={handleSubmit} className="bg-gray-800 p-8 rounded-lg w-full max-w-5xl space-y-6 justify-content-center align-items-center">
                 <h2 className="text-5xl font-bold text-center text-yellow-200 mb-5">Get Your Schedule!!</h2>
 
                 <label className="ml-6 block mb-2 text-lg font-sans text-white">Age</label>

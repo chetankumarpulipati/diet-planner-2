@@ -15,10 +15,7 @@ function Register() {
     });
     const navigate = useNavigate();
     const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
+        setFormData({...formData, [e.target.name]: e.target.value});
     };
 
     const handleSubmit = async (e) => {
@@ -87,7 +84,8 @@ function Register() {
                             className="py-2.5 px-12 me-2 mb-4 text-lg bg-blue-500 text-white rounded">Sign up
                     </button>
                 </form>
-                <h3 style={{color:'white', textAlign: "center", padding: 15}}>Already have an account? Log In</h3>
+                <h3 style={{color: 'white', textAlign: "center", padding: 15}}>Already have an account? <a href="/login"><u>Log
+                    In</u></a></h3>
             </div>
         </div>
     );

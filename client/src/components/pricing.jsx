@@ -1,25 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 const PricingTable = () => {
-  const backgroundImages = [
-    "https://images.pexels.com/photos/1435897/pexels-photo-1435897.jpeg",
-    "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg",
-    "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg",
-    "https://images.pexels.com/photos/1640776/pexels-photo-1640776.jpeg",
-    "https://images.pexels.com/photos/1435898/pexels-photo-1435898.jpeg"
-  ];
-
-  const [backgroundImage, setBackgroundImage] = useState("1");
-
-  useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * backgroundImages.length);
-    setBackgroundImage(backgroundImages[randomIndex]);
-  }, []);
-
   const styles = {
     body: {
       fontFamily: "Arial, sans-serif",
-      backgroundColor: "#f9f9f9",
+      backgroundColor: "#2d3748",
       textAlign: "center",
       margin: 0,
       padding: "20px",
@@ -33,8 +18,10 @@ const PricingTable = () => {
       position: "relative",
     },
     paragraph: {
-      color: "#777",
-      marginBottom: "40px",
+      color: "#ffffff",
+      marginTop: "50px",
+
+      marginBottom: "20px",
       zIndex: 1,
       position: "relative",
     },
@@ -53,6 +40,8 @@ const PricingTable = () => {
       width: "300px",
       padding: "20px",
       marginBottom: "20px",
+      position: "relative",
+      paddingBottom: "70px", // Add padding to avoid overlap with button
     },
     planHeader: {
       padding: "20px",
@@ -79,42 +68,37 @@ const PricingTable = () => {
       padding: 0,
       margin: "20px 0",
       color: "#555",
+      textAlign: "left",
     },
     planDetailItem: {
       margin: "10px 0",
       display: "flex",
       alignItems: "center",
+      padding: "5px 0",
     },
     symbolBox: {
       border: "1px solid #ccc",
       borderRadius: "3px",
-      padding: "2px 8px",
+      padding: "2px 10px",
       marginLeft: "10px",
       minWidth: "20px",
       textAlign: "center",
       fontWeight: "bold",
+      marginRight: "10px",
     },
     selectPlan: {
       textDecoration: "none",
       padding: "10px 20px",
       borderRadius: "10px",
       backgroundColor: "#ff4081",
-      color: "green",
+      color: "white",
       fontWeight: "bold",
-      display: "inline-block",
-      marginTop: "50px",
-    },
-    animatedBackground: {
+      display: "block",
+      margin: "0 auto",
       position: "absolute",
-      top: "0",
-      left: "0",
-      width: "100%",
-      height: "100%",
-      zIndex: 0,
-      backgroundImage: `url(${backgroundImage})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      opacity: 0.3,
+      bottom: "10px",
+      left: "50%",
+      transform: "translateX(-50%)",
     },
     '@media (max-width: 768px)': {
       pricingTable: {
@@ -130,10 +114,7 @@ const PricingTable = () => {
 
   return (
       <div style={styles.body}>
-        <div style={styles.animatedBackground}></div>
-        {/*<h1 style={styles.heading}>Our Pricing Table</h1>*/}
-        <p style={styles.paragraph}>Choose a plan that suits your needs</p>
-
+        <p style={styles.paragraph} className="lavishly-yours-regular">Choose a plan that suits your needs</p>
         <div style={styles.pricingTable}>
           <div style={styles.plan}>
             <div style={{ ...styles.planHeader, ...styles.weekly }}>
