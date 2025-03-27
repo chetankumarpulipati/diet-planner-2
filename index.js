@@ -92,7 +92,7 @@ app.post('/login', async (req, res) => {
         }
 
         const token = sign({ userId: user._id }, 'chetankumar', { expiresIn: '1h' });
-        res.json({ token, full_name: user.full_name, mobile: user.mobile });
+        res.json({ token, first_name: user.first_name, last_name: user.last_name, mobile: user.mobile });
     } catch (error) {
         console.error('Error during login:', error);
         res.status(500).json({ error: 'Server error' });

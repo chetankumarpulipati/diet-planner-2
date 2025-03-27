@@ -43,7 +43,8 @@ function NavigationBar() {
 
     const handleLogout = () => {
         localStorage.removeItem('token');
-        localStorage.removeItem('full_name');
+        localStorage.removeItem('first_name');
+        localStorage.removeItem('last_name');
         localStorage.removeItem('email');
         localStorage.removeItem('mobile');
         setIsLoggedIn(false);

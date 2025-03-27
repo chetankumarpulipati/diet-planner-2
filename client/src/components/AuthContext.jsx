@@ -5,7 +5,8 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [email, setEmail] = useState('');
-    const [full_name, setFullName] = useState('');
+    const [first_name, setFirstName] = useState('');
+    const [last_name, setLastName] = useState('');
     const [mobile, setMobile] = useState('');
 
     useEffect(() => {
@@ -13,13 +14,14 @@ export const AuthProvider = ({ children }) => {
         if (token) {
             setIsLoggedIn(true);
             setEmail(localStorage.getItem('email'));
-            setFullName(localStorage.getItem('full_name'));
+            setFirstName(localStorage.getItem('first_name'));
+            setLastName(localStorage.getItem('last_name'));
             setMobile(localStorage.getItem('mobile'));
         }
     }, []);
 
     return (
-        <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, email, setEmail, full_name, setFullName, mobile, setMobile }}>
+        <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, email, setEmail, first_name, last_name, mobile, setMobile }}>
             {children}
         </AuthContext.Provider>
     );

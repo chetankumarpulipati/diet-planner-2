@@ -8,7 +8,8 @@ import ResetPasswordModal from '../components/ResetPasswordModal';
 function Login() {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const { setIsLoggedIn, setEmail } = useContext(AuthContext);
-    const { full_name } = useContext(AuthContext);
+    const { first_name } = useContext(AuthContext);
+    const { last_name } = useContext(AuthContext);
     const { mobile } = useContext(AuthContext);
     const navigate = useNavigate();
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,9 +19,13 @@ function Login() {
         if (token) {
             setIsLoggedIn(true);
             setEmail(localStorage.getItem('email'));
-            const fullName = localStorage.getItem('full_name');
-            if (fullName) {
-                console.log('Full Name:', fullName);
+            const first_name = localStorage.getItem('first_name');
+            const last_name = localStorage.getItem('last_name');
+            if (first_name) {
+                console.log('Full Name:', first_name);
+            }
+            if(last_name){
+                console.log('Last Name:', last_name);
             }
             navigate('/');
         }
@@ -34,9 +39,10 @@ function Login() {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:3000/login', formData);
-            const { token, full_name, mobile } = response.data;
+            const { token, first_name, last_name, mobile } = response.data;
             localStorage.setItem('token', token);
-            localStorage.setItem('full_name', full_name);
+            localStorage.setItem('first_name', first_name);
+            localStorage.setItem('last_name', last_name);
             localStorage.setItem('email', formData.email);
             localStorage.setItem('mobile', mobile);
             alert('Logged in successfully');
